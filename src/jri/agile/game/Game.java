@@ -19,7 +19,7 @@ public class Game {
 		
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
-				gameBoard[i][j] = new Room(i, j);
+				gameBoard[i][j] = new Room(i, j, Room.RoomType.Normal);
 			}
 		}
 	}
