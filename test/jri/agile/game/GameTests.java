@@ -46,29 +46,29 @@ public class GameTests {
 	
 	@Test
 	public void playerCanMove () {
-		Player player = new Player();
+		GameEntity player = game.getPlayer();
 		
 		BoardPosition position = player.getCurrentPosition();
 		
 		assertEquals(0, position.getXPos());
 		assertEquals(0, position.getYPos());
 		
-		player.move('E');
+		game.movePlayer('E');
 		
 		assertEquals(1, position.getXPos());
 		assertEquals(0, position.getYPos());
 		
-		player.move('S');
+		game.movePlayer('S');
 		
 		assertEquals(1, position.getXPos());
 		assertEquals(1, position.getYPos());
 		
-		player.move('W');
+		game.movePlayer('W');
 		
 		assertEquals(0, position.getXPos());
 		assertEquals(1, position.getYPos());
 		
-		player.move('N');
+		game.movePlayer('N');
 		
 		assertEquals(0, position.getXPos());
 		assertEquals(0, position.getYPos());
@@ -80,12 +80,12 @@ public class GameTests {
 		
 		BoardPosition position = player.getCurrentPosition();
 		
-		player.move('W');
+		game.movePlayer('W');
 		
 		assertEquals(0, position.getXPos());
 		assertEquals(0, position.getYPos());
 		
-		player.move('N');
+		game.movePlayer('N');
 		
 		assertEquals(0, position.getXPos());
 		assertEquals(0, position.getYPos());
