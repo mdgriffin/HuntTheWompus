@@ -37,7 +37,17 @@ public class GameTests {
 	
 	@Test
 	public void playerCanMove () {
+		Player player = new Player();
 		
+		BoardPosition position = player.getCurrentPosition();
+		
+		assertEquals(0, position.getXPos());
+		assertEquals(0, position.getYPos());
+		
+		player.move('E');
+		
+		assertEquals(1, position.getXPos());
+		assertEquals(0, position.getYPos());
 	}
 	
 
