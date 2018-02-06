@@ -107,7 +107,13 @@ public class GameTests {
 		assertEquals(4, position.getYPos());
 	}
 	
-
-
+	@Test
+	public void gameHasWombus () {
+		GameEntity rick = game.getRick();
+		BoardPosition position = rick.getCurrentPosition();
+		
+		assertEquals(4, position.getXPos());
+		assertEquals(4, position.getYPos());
+	}
 
 }

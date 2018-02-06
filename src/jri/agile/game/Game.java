@@ -6,12 +6,14 @@ public class Game {
 	private int width;
 	private int height;
 	private GameEntity player;
+	private GameEntity rick;
 	
 	public Game (int width, int height) {
 		this.width = width;
 		this.height = height;
 		
-		this.player = new Player();
+		this.player = new Player(0, 0);
+		this.rick = new Rick(width - 1, height - 1);
 		
 		gameBoard = new Room[height][width];
 		
@@ -21,7 +23,6 @@ public class Game {
 			}
 		}
 	}
-	
 	
 	public Room[][] getRooms () {
 		return gameBoard;
@@ -33,6 +34,10 @@ public class Game {
 	
 	public GameEntity getPlayer () {
 		return player;
+	}
+	
+	public GameEntity getRick () {
+		return rick;
 	}
 	
 	public void movePlayer (char direction) {

@@ -2,8 +2,8 @@ package jri.agile.game;
 
 public class Player extends GameEntity {
 
-	public Player () {
-		super();
+	public Player (int xPos, int yPos) {
+		super(xPos, yPos);
 	}
 
 
