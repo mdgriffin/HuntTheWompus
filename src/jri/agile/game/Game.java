@@ -40,7 +40,7 @@ public class Game {
 		
 		if (direction == 'E') {
 			position.setXPos (position.getXPos() + 1);
-		} else if (direction == 'S') {
+		} else if (direction == 'S' && position.getYPos() < height - 1) {
 			position.setYPos(position.getYPos() + 1);
 		} else if (direction == 'W' && position.getXPos() > 0) {
 			position.setXPos (position.getXPos() - 1);

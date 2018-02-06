@@ -76,9 +76,7 @@ public class GameTests {
 	
 	@Test
 	public void playerCannotMoveIfAtEdge () {
-		Player player = new Player();
-		
-		BoardPosition position = player.getCurrentPosition();
+		BoardPosition position = game.getPlayer().getCurrentPosition();
 		
 		game.movePlayer('W');
 		
@@ -90,7 +88,14 @@ public class GameTests {
 		assertEquals(0, position.getXPos());
 		assertEquals(0, position.getYPos());
 		
-		// ToDo: Tests for East and South
+		game.movePlayer('S');
+		game.movePlayer('S');
+		game.movePlayer('S');
+		game.movePlayer('S');
+		game.movePlayer('S');
+		
+		assertEquals(0, position.getXPos());
+		assertEquals(4, position.getYPos());
 	}
 	
 
