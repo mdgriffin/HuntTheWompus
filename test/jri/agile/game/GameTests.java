@@ -20,7 +20,7 @@ public class GameTests {
 	}
 	
 	@Test
-	public void GameBoardCreates () {
+	public void gameBoardCreates () {
 		
 		Room[][] rooms = game.getRooms();
 
@@ -28,11 +28,16 @@ public class GameTests {
 	}
 	
 	@Test
-	public void GetSingleRoom () {
+	public void getSingleRoom () {
 		Room room = game.getRoom(0, 0);
 		
 		assertEquals(room.getRow(), 0);
 		assertEquals(room.getColumn(), 0);
+	}
+	
+	@Test
+	public void playerCanMove () {
+		
 	}
 	
 
