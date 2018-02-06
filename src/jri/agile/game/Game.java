@@ -48,6 +48,32 @@ public class Game {
 		moveEntity (rick, direction);
 	}
 	
+	public void moveRickRandom () {
+		int random = (int)(Math.random() * 5);
+		char direction;
+		
+		switch(random) {
+			case 0:
+				direction = 'N';
+				break;
+			case 1:
+				direction = 'E';
+				break;
+			case 2:
+				direction = 'S';
+				break;
+			case 3:
+				direction = 'W';
+				break;
+			default:
+				direction = 'R';
+				break;
+		}
+		
+		moveRick(direction);
+		
+	}
+	
 	private void moveEntity (GameEntity entity, char direction) {
 		BoardPosition position = entity.getCurrentPosition();
 		

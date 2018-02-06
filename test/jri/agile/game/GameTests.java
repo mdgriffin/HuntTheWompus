@@ -147,5 +147,44 @@ public class GameTests {
 		assertEquals(4, position.getXPos());
 		assertEquals(4, position.getYPos());
 	}
-
+	
+	@Test
+	public void rickMovesRandomly () {
+		Game game = new Game(3, 3);
+		GameEntity rick = game.getRick();
+		BoardPosition position = rick.getCurrentPosition();
+		int movedNorth = 0;
+		int movedSouth = 0;
+		int movedEast = 0;
+		int movedWest = 0;
+		int rested = 0;
+		
+		for (int i = 0; i < 1000; i++) {
+			position.setXPos(1);
+			position.setYPos(1);
+			
+			game.moveRickRandom();
+			
+			if (position.getYPos() == 0) {
+				movedNorth++;
+			} else if (position.getYPos() == 2) {
+				movedSouth++;
+			} else  if (position.getXPos() == 0) {
+				movedWest++;
+			} else if (position.getXPos() == 2) {
+				movedEast++;
+			} else if (position.getXPos() == 1 && position.getYPos() == 1) {
+				rested++;
+			}
+		}
+	
+		assertEquals(1000, movedNorth + movedSouth + movedEast + movedWest + rested);
+		
+		assertTrue (movedNorth > 150);
+		assertTrue (movedSouth > 150);
+		assertTrue (movedEast > 150);
+		assertTrue (movedWest > 150);
+		assertTrue (rested > 150);
+	}
+	
 }
