@@ -25,7 +25,18 @@ public class RoomTests {
 		
 		assertEquals(0, room.getNumArrows());
 		
+		assertTrue(room.hasBats());
+		assertTrue(!room.hasPit());
 		
+		room =  new Room(2, 2, Room.RoomType.PitRoom);
+		
+		assertEquals(2, room.getRow());
+		assertEquals(2,room.getColumn());
+		
+		assertEquals(0, room.getNumArrows());
+		
+		assertTrue(!room.hasBats());
+		assertTrue(room.hasPit());
 	}
 
 }
