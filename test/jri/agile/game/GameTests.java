@@ -36,6 +36,15 @@ public class GameTests {
 	}
 	
 	@Test
+	public void gameHasPlayer () {
+		GameEntity player = game.getPlayer();
+		BoardPosition position = player.getCurrentPosition();
+		
+		assertEquals(0, position.getXPos());
+		assertEquals(0, position.getYPos());
+	}
+	
+	@Test
 	public void playerCanMove () {
 		Player player = new Player();
 		
@@ -80,6 +89,8 @@ public class GameTests {
 		
 		assertEquals(0, position.getXPos());
 		assertEquals(0, position.getYPos());
+		
+		// ToDo: Tests for East and South
 	}
 	
 
