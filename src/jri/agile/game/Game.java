@@ -38,7 +38,7 @@ public class Game {
 	public void movePlayer (char direction) {
 		BoardPosition position = player.getCurrentPosition();
 		
-		if (direction == 'E') {
+		if (direction == 'E' && position.getXPos() < width - 1) {
 			position.setXPos (position.getXPos() + 1);
 		} else if (direction == 'S' && position.getYPos() < height - 1) {
 			position.setYPos(position.getYPos() + 1);

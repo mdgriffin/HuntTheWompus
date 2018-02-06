@@ -96,6 +96,15 @@ public class GameTests {
 		
 		assertEquals(0, position.getXPos());
 		assertEquals(4, position.getYPos());
+		
+		game.movePlayer('E');
+		game.movePlayer('E');
+		game.movePlayer('E');
+		game.movePlayer('E');
+		game.movePlayer('E');
+		
+		assertEquals(4, position.getXPos());
+		assertEquals(4, position.getYPos());
 	}
 	
 
