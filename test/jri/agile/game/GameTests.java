@@ -115,5 +115,37 @@ public class GameTests {
 		assertEquals(4, position.getXPos());
 		assertEquals(4, position.getYPos());
 	}
+	
+	@Test
+	public void canMoveRick () {
+		GameEntity rick = game.getRick();
+		
+		BoardPosition position = rick.getCurrentPosition();
+		
+		assertEquals(4, position.getXPos());
+		assertEquals(4, position.getYPos());
+		
+		
+		game.moveRick('N');
+		
+		assertEquals(4, position.getXPos());
+		assertEquals(3, position.getYPos());
+		
+		
+		game.moveRick('W');
+		
+		assertEquals(3, position.getXPos());
+		assertEquals(3, position.getYPos());
+		
+		game.moveRick('S');
+		
+		assertEquals(3, position.getXPos());
+		assertEquals(4, position.getYPos());
+		
+		game.moveRick('E');
+		
+		assertEquals(4, position.getXPos());
+		assertEquals(4, position.getYPos());
+	}
 
 }

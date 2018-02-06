@@ -41,7 +41,15 @@ public class Game {
 	}
 	
 	public void movePlayer (char direction) {
-		BoardPosition position = player.getCurrentPosition();
+		moveEntity (player, direction);
+	}
+	
+	public void moveRick (char direction) {
+		moveEntity (rick, direction);
+	}
+	
+	private void moveEntity (GameEntity entity, char direction) {
+		BoardPosition position = entity.getCurrentPosition();
 		
 		if (direction == 'E' && position.getXPos() < width - 1) {
 			position.setXPos (position.getXPos() + 1);
