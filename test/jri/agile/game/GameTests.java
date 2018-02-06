@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -11,18 +12,30 @@ import org.junit.runners.Suite.SuiteClasses;
 
 public class GameTests {
 	
+	private Game game;
+	
+	@Before
+	public void setup () {
+		this.game = new Game(5,5);
+	}
 	
 	@Test
 	public void GameBoardCreates () {
 		
-		Game game = new Game();
+		Room[][] rooms = game.getRooms();
 
-		assertTrue(true);
+		assertEquals(rooms[0].length, 5);
 	}
-
 	
 	@Test
-	public void PlayerCanMove () {
-		assertEquals(true, false);
+	public void GetSingleRoom () {
+		Room room = game.getRoom(0, 0);
+		
+		assertEquals(room.getRow(), 0);
+		assertEquals(room.getColumn(), 0);
 	}
+	
+
+
+
 }
