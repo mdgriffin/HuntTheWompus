@@ -21,4 +21,8 @@ public class BoardPosition {
 	public void setXPos (int xPos) {
 		this.xPos = xPos;
 	}
+	
+	public void setYPos (int yPos) {
+		this.yPos = yPos;
+	}
 }

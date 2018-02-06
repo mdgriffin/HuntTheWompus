@@ -48,6 +48,33 @@ public class GameTests {
 		
 		assertEquals(1, position.getXPos());
 		assertEquals(0, position.getYPos());
+		
+		player.move('S');
+		
+		assertEquals(1, position.getXPos());
+		assertEquals(1, position.getYPos());
+		
+		player.move('W');
+		
+		assertEquals(0, position.getXPos());
+		assertEquals(1, position.getYPos());
+		
+		player.move('N');
+		
+		assertEquals(0, position.getXPos());
+		assertEquals(0, position.getYPos());
+	}
+	
+	@Test
+	public void playerCannotMoveIfAtEdge () {
+		Player player = new Player();
+		
+		BoardPosition position = player.getCurrentPosition();
+		
+		player.move('W');
+		
+		assertEquals(0, position.getXPos());
+		assertEquals(0, position.getYPos());
 	}
 	
 

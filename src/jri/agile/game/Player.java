@@ -20,6 +20,12 @@ public class Player extends GameEntity {
 		
 		if (direction == 'E') {
 			position.setXPos (position.getXPos() + 1);
+		} else if (direction == 'S') {
+			position.setYPos(position.getYPos() + 1);
+		} else if (direction == 'W') {
+			position.setXPos (position.getXPos() - 1);
+		} else if (direction == 'N') {
+			position.setYPos(position.getYPos() - 1);
 		}
 		
 	}
