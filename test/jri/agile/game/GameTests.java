@@ -187,4 +187,21 @@ public class GameTests {
 		assertTrue (rested > 150);
 	}
 	
+	@Test
+	public void checkRickAndPlayerInRoom () {
+		game.movePlayer('S');
+		game.movePlayer('S');
+		game.movePlayer('S');
+		game.movePlayer('S');
+		
+		assertTrue(!game.isPlayerInRoomWithRick());
+		
+		game.movePlayer('E');
+		game.movePlayer('E');
+		game.movePlayer('E');
+		game.movePlayer('E');
+		
+		assertTrue(game.isPlayerInRoomWithRick());
+	}
+	
 }

@@ -88,5 +88,9 @@ public class Game {
 		}
 	}
 	
+	public boolean isPlayerInRoomWithRick () {
+		return player.getCurrentPosition().equals(rick.getCurrentPosition());
+	}
+	
 
 }
