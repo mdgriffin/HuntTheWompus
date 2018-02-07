@@ -24,9 +24,9 @@ public class Game {
 		BoardPosition rickPos = rick.getCurrentPosition();
 		BoardPosition playerPos = player.getCurrentPosition();
 		
-		for (int i = 0; i < height; i++) {
-			for (int j = 0; j < width; j++) {
-				gameBoard[i][j] = new Room(i, j, Room.RoomType.Normal);
+		for (int row = 0; row < height; row++) {
+			for (int col = 0; col < width; col++) {
+				setRoom(row, col, new Room(row, col, Room.RoomType.Normal));
 			}
 		}
 		
@@ -36,7 +36,7 @@ public class Game {
 			
 			if (playerPos.getXPos() != randX && playerPos.getYPos() != randY 
 				&& rickPos.getXPos() != randX && rickPos.getYPos() != randY) {
-				setRoom(randX, randY, new Room(randY, randX, Room.RoomType.PitRoom));
+				setRoom(randY, randX, new Room(randY, randX, Room.RoomType.PitRoom));
 				numPits++;
 			}
 		}
@@ -46,13 +46,13 @@ public class Game {
 		return gameBoard;
 	}
 	
-	public Room getRoom (int x, int y) {
-		return gameBoard[x][y];
+	public Room getRoom (int row, int col) {
+		return gameBoard[row][col];
 	}
 	
-	public void setRoom (int x, int y, Room room) {
-		if (x < height && y < width) {
-			gameBoard[x][y] = room;
+	public void setRoom (int row, int col, Room room) {
+		if (row < height && col < width) {
+			gameBoard[row][col] = room;
 		}
 	}
 	

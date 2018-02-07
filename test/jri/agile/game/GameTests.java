@@ -269,12 +269,12 @@ public class GameTests {
 	public void gameHasTwoPits () {
 		int width = 5;
 		int height = 5;
-		Game game  = new Game(width, height);
+		Game game  = new Game(height, width);
 		int numPits = 0;
 		
-		for (int i = 0; i < height; i++) {
-			for (int j = 0; j < width; j++) {
-				if (game.getRoom(i, j).hasPit()) {
+		for (int row = 0; row < height; row++) {
+			for (int col = 0; col < width; col++) {
+				if (game.getRoom(row, col).hasPit()) {
 					numPits++;
 				}
 			}
@@ -287,7 +287,7 @@ public class GameTests {
 	public void playerInNormalRoom () {
 		int playerX = game.getPlayer().getCurrentPosition().getXPos();
 		int playerY = game.getPlayer().getCurrentPosition().getYPos();
-		Room room = game.getRoom(playerX, playerY);
+		Room room = game.getRoom(playerY, playerX);
 		
 		assertTrue(!room.hasBats());
 		assertTrue(!room.hasPit());
@@ -297,7 +297,7 @@ public class GameTests {
 	public void rickInNormalRoom () {
 		int rickX = game.getRick().getCurrentPosition().getXPos();
 		int rickY = game.getRick().getCurrentPosition().getYPos();
-		Room room = game.getRoom(rickX, rickY);
+		Room room = game.getRoom(rickY, rickX);
 		
 		assertTrue(!room.hasBats());
 		assertTrue(!room.hasPit());
