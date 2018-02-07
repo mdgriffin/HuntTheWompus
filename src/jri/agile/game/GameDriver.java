@@ -27,6 +27,32 @@ public class GameDriver {
 				printHelp();
 			} else if (command == 'm') {
 				System.out.println("You want to move");
+				String[] moveDirection = userInput.split("\\s+");
+				
+				if (moveDirection.length != 2) {
+					System.out.println("Invalid command please enter again");
+				} else {
+					char direction = moveDirection[1].toLowerCase().charAt(0);
+					
+					switch (direction) {
+						case 'n':
+							System.out.println("Move North");
+							break;
+						case 's':
+							System.out.println("Move South");
+							break;
+						case 'e':
+							System.out.println("Move East");
+							break;
+						case 'w':
+							System.out.println("Move West");
+							break;
+						default:
+							System.out.println("Invalid command");
+							break;
+					}
+				}
+				
 			} else if (command == 's') {
 				System.out.println("You want to shoot");
 			} else if (command != 'q') {
@@ -46,7 +72,6 @@ public class GameDriver {
 			"Welcome to Hunt the Wombus"
 		);
 	}
-	
 	
 	private static void printHelp () {
 		System.out.println(
