@@ -497,7 +497,21 @@ public class GameTests {
 	
 	@Test
 	public void playerCanPickUpArrows () {
+		Game game = buildEmptyMap(5, 5);
 		
+		Player player = game.getPlayer();
+		
+		game.movePlayer('E');
+		
+		assertEquals(5, player.getNumArrows());
+		
+		player.shoot('W');
+		
+		assertEquals(4, player.getNumArrows());
+		
+		game.movePlayer('W');
+		
+		assertEquals(5, player.getNumArrows());
 	}
 	
 	
