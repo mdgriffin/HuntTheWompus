@@ -86,7 +86,7 @@ public class Player extends GameEntity {
 		String res = "";
 		
 		while(actionLog.size() > 0) {
-			res += "\n" + actionLog.pop();
+			res += "\n" + actionLog.removeLast();
 		}
 		
 		return res;

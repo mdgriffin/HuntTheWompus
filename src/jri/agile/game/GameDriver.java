@@ -7,7 +7,6 @@ public class GameDriver {
 	public static void main (String[] args) {
 		
 		Game game = new Game(5, 5);
-		GameEntity player = game.getPlayer();
 		String userInput;
 		char command = ' ';
 		
