@@ -36,7 +36,7 @@ public class Game {
 			
 			if (playerPos.getXPos() != randX && playerPos.getYPos() != randY 
 				&& rickPos.getXPos() != randX && rickPos.getYPos() != randY) {
-				setRoom(randX, randY, new Room(randX, randY, Room.RoomType.PitRoom));
+				setRoom(randX, randY, new Room(randY, randX, Room.RoomType.PitRoom));
 				numPits++;
 			}
 		}

@@ -283,4 +283,24 @@ public class GameTests {
 		assertEquals(2, numPits);
 	}
 	
+	@Test
+	public void playerInNormalRoom () {
+		int playerX = game.getPlayer().getCurrentPosition().getXPos();
+		int playerY = game.getPlayer().getCurrentPosition().getYPos();
+		Room room = game.getRoom(playerX, playerY);
+		
+		assertTrue(!room.hasBats());
+		assertTrue(!room.hasPit());
+	}
+	
+	@Test
+	public void rickInNormalRoom () {
+		int rickX = game.getRick().getCurrentPosition().getXPos();
+		int rickY = game.getRick().getCurrentPosition().getYPos();
+		Room room = game.getRoom(rickX, rickY);
+		
+		assertTrue(!room.hasBats());
+		assertTrue(!room.hasPit());
+	}
+	
 }
