@@ -1,0 +1,13 @@
+---
+Test
+---
+!define TEST_SYSTEM {slim}
+!path C:\Users\mdgri\eclipse-workspace\HuntTheWombus\HuntTheWompus\bin
+
+!| import |
+| jri.agile.game |
+
+!| GameContext |
+
+!| script | GameFixture |
+|check | getPlayerPositionX | 0 |
