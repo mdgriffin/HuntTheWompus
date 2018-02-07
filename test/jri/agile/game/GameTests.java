@@ -284,6 +284,62 @@ public class GameTests {
 	}
 	
 	@Test
+	public void gameHasTwoBats () {
+		int width = 5;
+		int height = 5;
+		Game game  = new Game(height, width);
+		int numBats = 0;
+		
+		for (int row = 0; row < height; row++) {
+			for (int col = 0; col < width; col++) {
+				if (game.getRoom(row, col).hasBats()) {
+					numBats++;
+				}
+			}
+		}
+			
+		assertEquals(2, numBats);
+	}
+	
+	@Test
+	public void gameHasVariableBats () {
+		int expectedBats = 8;
+		int width = 10;
+		int height = 10;
+		Game game  = new Game(height, width);
+		int numBats = 0;
+		
+		for (int row = 0; row < height; row++) {
+			for (int col = 0; col < width; col++) {
+				if (game.getRoom(row, col).hasBats()) {
+					numBats++;
+				}
+			}
+		}
+			
+		assertEquals(expectedBats, numBats);
+	}
+	
+	public void gameHasVariablePits () {
+		int expectedPits = 8;
+		int width = 10;
+		int height = 10;
+		Game game  = new Game(height, width);
+		int numPits = 0;
+		
+		for (int row = 0; row < height; row++) {
+			for (int col = 0; col < width; col++) {
+				if (game.getRoom(row, col).hasBats()) {
+					numPits++;
+				}
+			}
+		}
+			
+		assertEquals(expectedPits, numPits);
+	}
+
+	
+	@Test
 	public void playerInNormalRoom () {
 		int playerX = game.getPlayer().getCurrentPosition().getXPos();
 		int playerY = game.getPlayer().getCurrentPosition().getYPos();

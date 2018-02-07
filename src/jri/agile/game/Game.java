@@ -21,6 +21,8 @@ public class Game {
 	private void generateBoard () {
 		gameBoard = new Room[height][width];
 		int numPits = 0;
+		int numBats = 0;
+		int roomNumLogic = (int) ((height*width)*.08);
 		BoardPosition rickPos = rick.getCurrentPosition();
 		BoardPosition playerPos = player.getCurrentPosition();
 		
@@ -30,14 +32,28 @@ public class Game {
 			}
 		}
 		
-		while (numPits < 2) {
+		while (numPits < roomNumLogic ) {
 			int randX = (int)(Math.random() * width);
 			int randY = (int)(Math.random() * height);
 			
 			if (playerPos.getXPos() != randX && playerPos.getYPos() != randY 
-				&& rickPos.getXPos() != randX && rickPos.getYPos() != randY) {
+				&& rickPos.getXPos() != randX && rickPos.getYPos() != randY
+				&& !getRoom(randY, randX).hasPit()) {
 				setRoom(randY, randX, new Room(randY, randX, Room.RoomType.PitRoom));
 				numPits++;
+			}
+		}
+		
+		while (numBats < roomNumLogic) {
+			int randX = (int)(Math.random() * width);
+			int randY = (int)(Math.random() * height);
+			
+			if (playerPos.getXPos() != randX && playerPos.getYPos() != randY 
+				&& rickPos.getXPos() != randX && rickPos.getYPos() != randY
+				&& !getRoom(randY, randX).hasPit()
+				&& !getRoom(randY, randX).hasBats()) {
+				setRoom(randY, randX, new Room(randY, randX, Room.RoomType.BatRoom));
+				numBats++;
 			}
 		}
 	}
