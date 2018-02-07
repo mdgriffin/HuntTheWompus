@@ -20,25 +20,27 @@ public class GameDriver {
 			
 			System.out.print("\n> ");
 			
-			userInput = input.nextLine();
-			command = userInput.toLowerCase().charAt(0);
+			userInput = input.nextLine().toUpperCase();
+			command = userInput.charAt(0);
 			
-			if (command == 'h') {
+			if (command == 'H') {
 				printHelp();
-			} else if (command == 'm') {
+			} else if (command == 'M') {
 				System.out.println("You want to move");
 				String[] moveDirection = userInput.split("\\s+");
 				
 				if (moveDirection.length != 2) {
 					System.out.println("Invalid command please enter again");
 				} else {
-					char direction = moveDirection[1].toLowerCase().charAt(0);
+					char direction = moveDirection[1].charAt(0);
 					game.movePlayer(direction);
 				}
 				
-			} else if (command == 's') {
+				System.out.println(game.toString());
+				
+			} else if (command == 'S') {
 				System.out.println("You want to shoot");
-			} else if (command != 'q') {
+			} else if (command != 'Q') {
 				System.out.print("\nInvalid Command, please enter again: ");
 			}
 			

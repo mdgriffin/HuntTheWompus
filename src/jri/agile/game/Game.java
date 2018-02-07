@@ -92,5 +92,9 @@ public class Game {
 		return player.getCurrentPosition().equals(rick.getCurrentPosition());
 	}
 	
+	public String toString () {
+		return "Player is at " + player.getCurrentPosition().getXPos() + "," + player.getCurrentPosition().getYPos();
+	}
+	
 
 }
