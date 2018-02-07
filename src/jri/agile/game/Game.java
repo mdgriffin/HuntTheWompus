@@ -8,18 +8,36 @@ public class Game {
 	private Player player;
 	private GameEntity rick;
 	
-	public Game (int width, int height) {
+	public Game (int height, int width) {
 		this.width = width;
 		this.height = height;
 		
 		this.player = new Player(0, 0);
 		this.rick = new Rick(width - 1, height - 1);
 		
+		generateBoard();
+	}
+	
+	private void generateBoard () {
 		gameBoard = new Room[height][width];
+		int numPits = 0;
+		BoardPosition rickPos = rick.getCurrentPosition();
+		BoardPosition playerPos = player.getCurrentPosition();
 		
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
 				gameBoard[i][j] = new Room(i, j, Room.RoomType.Normal);
+			}
+		}
+		
+		while (numPits < 2) {
+			int randX = (int)(Math.random() * width);
+			int randY = (int)(Math.random() * height);
+			
+			if (playerPos.getXPos() != randX && playerPos.getYPos() != randY 
+				&& rickPos.getXPos() != randX && rickPos.getYPos() != randY) {
+				setRoom(randX, randY, new Room(randX, randY, Room.RoomType.PitRoom));
+				numPits++;
 			}
 		}
 	}

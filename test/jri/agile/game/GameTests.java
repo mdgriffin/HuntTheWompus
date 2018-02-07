@@ -265,4 +265,22 @@ public class GameTests {
 		assertTrue(!game.getPlayer().isAlive());
 	}
 	
+	@Test
+	public void gameHasTwoPits () {
+		int width = 5;
+		int height = 5;
+		Game game  = new Game(width, height);
+		int numPits = 0;
+		
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < width; j++) {
+				if (game.getRoom(i, j).hasPit()) {
+					numPits++;
+				}
+			}
+		}
+			
+		assertEquals(2, numPits);
+	}
+	
 }
