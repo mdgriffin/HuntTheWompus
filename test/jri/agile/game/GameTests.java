@@ -264,4 +264,5 @@ public class GameTests {
 		
 		assertTrue(!game.getPlayer().isAlive());
 	}
+	
 }

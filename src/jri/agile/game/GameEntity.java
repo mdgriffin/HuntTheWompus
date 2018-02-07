@@ -21,5 +21,7 @@ public class GameEntity {
 	public void die () {
 		isAlive = false;
 	}
+	
+
 
 }

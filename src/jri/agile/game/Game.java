@@ -5,7 +5,7 @@ public class Game {
 	private Room[][] gameBoard;
 	private int width;
 	private int height;
-	private GameEntity player;
+	private Player player;
 	private GameEntity rick;
 	
 	public Game (int width, int height) {
@@ -38,7 +38,7 @@ public class Game {
 		}
 	}
 	
-	public GameEntity getPlayer () {
+	public Player getPlayer () {
 		return player;
 	}
 	
@@ -49,8 +49,10 @@ public class Game {
 	public void movePlayer (char direction) {
 		moveEntity (player, direction);
 		
-		if (isPlayerInRoomWithRick() || isPlayerInRoomWithPit()) {
-			player.die();
+		if (isPlayerInRoomWithRick()) {
+			player.die("You were killed by Rick");
+		} else if (isPlayerInRoomWithPit()) {
+			player.die("You fell into the Pit");
 		}
 	}
 	
@@ -108,7 +110,7 @@ public class Game {
 	}
 	
 	public String toString () {
-		return "Player is at " +  player.getCurrentPosition().getYPos() + "," +  player.getCurrentPosition().getXPos();
+		return player.toString();
 	}
 	
 
