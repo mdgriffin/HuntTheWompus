@@ -40,6 +40,8 @@ public class GameDriver {
 				
 			} else if (command == 'S') {
 				System.out.println("You want to shoot");
+			} else if (command == 'P') {
+				System.out.println(game.printMap());
 			} else if (command != 'Q') {
 				System.out.print("\nInvalid Command, please enter again: ");
 			}

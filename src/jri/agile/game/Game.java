@@ -143,9 +143,33 @@ public class Game {
 		return room.hasPit();
 	}
 	
+	public String printMap () {
+		String res = "|";
+		int playerX = player.getCurrentPosition().getXPos();
+		int playerY = player.getCurrentPosition().getYPos();
+		int rickX = rick.getCurrentPosition().getXPos();
+		int rickY = rick.getCurrentPosition().getYPos();
+		
+		for (int row = 0; row < height; row++) {
+			for (int col = 0; col < width; col++) {
+				String inner = "";
+				
+				inner += getRoom(row, col).hasBats()? "B" : "" ;
+				inner += getRoom(row, col).hasPit()? "O" : "" ;
+				inner += row == playerY && col == playerX ? "P" : "";
+				inner += row == rickY && col == rickX ? "R" : "";
+				
+				res += String.format("|%-4s|", inner);
+			}
+			
+			res += "|\n|";
+		}
+		
+		return res.substring(0, res.length() - 1);
+	}
+	
 	public String toString () {
 		return player.toString();
 	}
 	
-
 }
