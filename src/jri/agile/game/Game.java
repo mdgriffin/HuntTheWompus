@@ -9,11 +9,11 @@ public class Game {
 	private GameEntity rick;
 	
 	public Game (int height, int width) {
-		this.width = width;
 		this.height = height;
+		this.width = width;
 		
 		this.player = new Player(0, 0);
-		this.rick = new Rick(width - 1, height - 1);
+		this.rick = new Rick(height - 1, width - 1);
 		
 		generateBoard();
 	}
