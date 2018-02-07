@@ -18,6 +18,10 @@ public class Game {
 		generateBoard();
 	}
 	
+	public boolean isOver () {
+		return !player.isAlive() || !rick.isAlive();
+	}
+	
 	private void generateBoard () {
 		gameBoard = new Room[height][width];
 		int numPits = 0;

@@ -492,7 +492,20 @@ public class GameTests {
 	
 	@Test
 	public void playerCanKillRick () {
+		Game game = buildEmptyMap(5, 5);
 		
+		Player player = game.getPlayer();
+		
+		game.movePlayer('S');
+		game.movePlayer('S');
+		game.movePlayer('S');
+		game.movePlayer('S');
+		
+		player.shoot('E');
+		
+		assertTrue(game.isOver());
+		assertTrue(!game.getRick().isAlive());
+		assertTrue(player.isAlive());
 	}
 	
 	@Test

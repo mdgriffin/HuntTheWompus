@@ -22,27 +22,19 @@ public class Player extends GameEntity {
 	public void shoot (char direction) {
 		if (numArrows > 0) {
 			numArrows--;
-			
 			BoardPosition position = getCurrentPosition();
+			GameEntity rick = game.getRick();
 			
-			// ToDo: Replace with loop
-			/*
-			if ((direction == 'E' && position.getXPos() == game.getWidth() - 1) ||
-				(direction == 'S' && position.getYPos() == game.getHeight() - 1) ||
-				(direction == 'W' && position.getXPos() == 0) ||
-				(direction == 'N' && position.getYPos() == 0)) {
-				die();
-				actionLog.push("You took an arrow to the knee!");
-			}
-			*/
+			actionLog.push(">>-Whoosh--->");
 			
-			// find the last room
 			int numRoomsMoved = 0;
 			
 			if (direction == 'E') {
 				for (int col = position.getXPos(); col < game.getWidth(); col++) {
-					
-					if (col == game.getWidth() - 1) {
+					if (rick.getCurrentPosition().getYPos() == position.getYPos() && rick.getCurrentPosition().getXPos() == col) {
+						actionLog.push("You killed Rick!");
+						game.getRick().die();
+					} else if (col == game.getWidth() - 1) {
 						game.getRoom(position.getYPos(), col).addArrow();
 					}
 					
@@ -50,8 +42,10 @@ public class Player extends GameEntity {
 				}
 			} else if (direction == 'W') {
 				for (int col = position.getXPos(); col >= 0; col--) {
-					
-					if (col == 0) {
+					if (rick.getCurrentPosition().getYPos() == position.getYPos() && rick.getCurrentPosition().getXPos() == col) {
+						actionLog.push("You killed Rick!");
+						game.getRick().die();
+					}else if (col == 0) {
 						game.getRoom(position.getYPos(), col).addArrow();
 					}
 					numRoomsMoved++;
@@ -59,14 +53,20 @@ public class Player extends GameEntity {
 				
 			} else if (direction == 'S') {
 				for (int row = position.getYPos(); row < game.getHeight(); row++) {
-					if (row == game.getHeight() - 1) {
+					if (rick.getCurrentPosition().getXPos() == position.getXPos() && rick.getCurrentPosition().getYPos() == row) {
+						actionLog.push("You killed Rick!");
+						game.getRick().die();
+					}else if (row == game.getHeight() - 1) {
 						game.getRoom(row, position.getXPos()).addArrow();
 					}
 					numRoomsMoved++;
 				}
 			} else if (direction == 'N') {
 				for (int row = position.getYPos(); row >= 0; row--) {
-					if (row == 0) {
+					if (rick.getCurrentPosition().getXPos() == position.getXPos() && rick.getCurrentPosition().getYPos() == row) {
+						actionLog.push("You killed Rick!");
+						game.getRick().die();
+					}else if (row == 0) {
 						game.getRoom(row, position.getXPos()).addArrow();
 					}
 					numRoomsMoved++;
@@ -77,6 +77,8 @@ public class Player extends GameEntity {
 				die();
 				actionLog.push("You took an arrow to the knee!");
 			}
+		} else {
+			actionLog.push("Oh, no arrows left");
 		}
 	}
 	

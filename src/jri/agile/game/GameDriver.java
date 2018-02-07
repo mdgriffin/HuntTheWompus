@@ -16,7 +16,7 @@ public class GameDriver {
 		printWelcome();
 		printHelp();
 
-		while (command != 'q' && player.isAlive()) {
+		while (command != 'q' && !game.isOver()) {
 			
 			System.out.print("\n> ");
 			
