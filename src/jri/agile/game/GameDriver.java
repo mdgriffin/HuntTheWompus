@@ -9,30 +9,51 @@ public class GameDriver {
 		Game game = new Game(5, 5);
 		GameEntity player = game.getPlayer();
 		String userInput;
+		char command = ' ';
 		
 		Scanner input = new Scanner(System.in);
 		
-		while (player.isAlive()) {
-			
-			System.out.println(
-				"Welcome to Hunt the Wombus" +
-				"\n\nTo Move enter (M)ove followed by the direction (N, S, E, W)" +
-				"\nTo Shoot enter (S)hoot followed by the direction (N, S, E, W)" +
-				"\nTo see these options again, type (H)elp"
-			);
+		printWelcome();
+		printHelp();
+
+		while (command != 'q' && player.isAlive()) {
 			
 			System.out.print("\n> ");
 			
 			userInput = input.nextLine();
+			command = userInput.toLowerCase().charAt(0);
 			
-			System.out.println("You entered: " + userInput);
+			if (command == 'h') {
+				printHelp();
+			} else if (command == 'm') {
+				System.out.println("You want to move");
+			} else if (command == 's') {
+				System.out.println("You want to shoot");
+			} else if (command != 'q') {
+				System.out.print("\nInvalid Command, please enter again: ");
+			}
 			
-			player.die();
 		}
 		
 		System.out.println("\n\nGoodbye, thanks for playing");
 		
 		System.exit(0);
 		
+	}
+	
+	private static void printWelcome () {
+		System.out.println(
+			"Welcome to Hunt the Wombus"
+		);
+	}
+	
+	
+	private static void printHelp () {
+		System.out.println(
+			"\nTo Move enter (M)ove followed by the direction (N, S, E, W)" +
+			"\nTo Shoot enter (S)hoot followed by the direction (N, S, E, W)" +
+			"\nTo see these options again, type (H)elp" +
+			"\nTo quit the game enter (Q)uit"
+		);
 	}
 }
