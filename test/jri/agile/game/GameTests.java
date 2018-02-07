@@ -359,4 +359,23 @@ public class GameTests {
 		assertTrue(!room.hasPit());
 	}
 	
+	@Test
+	public void batsCanMovePlayer () {
+		int timesPlayerMoved = 0;
+		Game game;
+				
+		for (int i = 0; i < 100; i++) {
+			game = new Game(5, 5);
+			BoardPosition playerPos = game.getPlayer().getCurrentPosition();
+			game.setRoom(0, 1, new Room(0, 1, Room.RoomType.BatRoom));
+			game.movePlayer('E');
+			
+			if (playerPos.getXPos() != 1 || playerPos.getYPos() != 1) {
+				timesPlayerMoved++;
+			}
+		}
+		
+		assertTrue(timesPlayerMoved > 90);
+	}
+	
 }
