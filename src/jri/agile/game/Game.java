@@ -121,6 +121,8 @@ public class Game {
 				currentRoom.removeArrows();
 			}
 		}
+		
+		moveRickRandom();
 	}
 	
 	public void movePlayerRandom () {
