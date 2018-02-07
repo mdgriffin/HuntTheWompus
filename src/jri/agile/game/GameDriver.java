@@ -33,24 +33,7 @@ public class GameDriver {
 					System.out.println("Invalid command please enter again");
 				} else {
 					char direction = moveDirection[1].toLowerCase().charAt(0);
-					
-					switch (direction) {
-						case 'n':
-							System.out.println("Move North");
-							break;
-						case 's':
-							System.out.println("Move South");
-							break;
-						case 'e':
-							System.out.println("Move East");
-							break;
-						case 'w':
-							System.out.println("Move West");
-							break;
-						default:
-							System.out.println("Invalid command");
-							break;
-					}
+					game.movePlayer(direction);
 				}
 				
 			} else if (command == 's') {
