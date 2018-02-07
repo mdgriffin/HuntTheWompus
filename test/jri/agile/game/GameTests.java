@@ -19,6 +19,18 @@ public class GameTests {
 		this.game = new Game(5,5);
 	}
 	
+	public static Game buildEmptyMap (int height, int width) {
+		Game game = new Game(height, width);
+		
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < width; j++) {
+				game.setRoom(i, j, new Room (height, width, Room.RoomType.Normal));
+			}
+		}
+		
+		return game;
+	}
+	
 	@Test
 	public void gameBoardCreates () {
 		
@@ -46,6 +58,7 @@ public class GameTests {
 	
 	@Test
 	public void playerCanMove () {
+		// ToDo: Create a clear board
 		GameEntity player = game.getPlayer();
 		
 		BoardPosition position = player.getCurrentPosition();
@@ -406,5 +419,86 @@ public class GameTests {
 		
 		assertTrue(!player.isAlive());
 	}
+	
+	@Test
+	public void arrowFliesEast () {
+		Player player = game.getPlayer();
+		
+		int numArrowsInLastRoomAfterShoot = game.getRoom(0, 4).getNumArrows();
+		
+		assertEquals(0, numArrowsInLastRoomAfterShoot);
+		
+		player.shoot('E');
+		
+		numArrowsInLastRoomAfterShoot = game.getRoom(0, 4).getNumArrows();
+		
+		assertTrue(numArrowsInLastRoomAfterShoot > 0);
+	}
+	
+	@Test
+	public void arrowFliesWest () {
+		Game game = buildEmptyMap(5, 5);
+		
+		Player player = game.getPlayer();
+		
+		game.movePlayer('E');
+		game.movePlayer('E');
+		
+		int numArrowsInLastRoomAfterShoot = game.getRoom(0, 0).getNumArrows();
+		
+		assertEquals(0, numArrowsInLastRoomAfterShoot);
+		
+		player.shoot('W');
+		
+		numArrowsInLastRoomAfterShoot = game.getRoom(0, 0).getNumArrows();
+		
+		assertTrue(numArrowsInLastRoomAfterShoot > 0);
+	}
+	
+	@Test
+	public void arrowFliesSouth () {
+		Player player = game.getPlayer();
+		
+		int numArrowsInLastRoomAfterShoot = game.getRoom(4, 0).getNumArrows();
+		
+		assertEquals(0, numArrowsInLastRoomAfterShoot);
+		
+		player.shoot('S');
+		
+		numArrowsInLastRoomAfterShoot = game.getRoom(4, 0).getNumArrows();
+		
+		assertTrue(numArrowsInLastRoomAfterShoot > 0);
+	}
+	
+	@Test
+	public void arrowFliesNorth () {
+		Game game = buildEmptyMap(5, 5);
+		
+		Player player = game.getPlayer();
+		
+		game.movePlayer('S');
+		game.movePlayer('S');
+		
+		int numArrowsInLastRoomAfterShoot = game.getRoom(0, 0).getNumArrows();
+		
+		assertEquals(0, numArrowsInLastRoomAfterShoot);
+		
+		player.shoot('N');
+		
+		numArrowsInLastRoomAfterShoot = game.getRoom(0, 0).getNumArrows();
+		
+		assertTrue(numArrowsInLastRoomAfterShoot > 0);
+	}
+	
+	@Test
+	public void playerCanKillRick () {
+		
+	}
+	
+	@Test
+	public void playerCanPickUpArrows () {
+		
+	}
+	
 	
 }

@@ -21,10 +21,55 @@ public class Player extends GameEntity {
 			
 			BoardPosition position = getCurrentPosition();
 			
+			// ToDo: Replace with loop
+			/*
 			if ((direction == 'E' && position.getXPos() == game.getWidth() - 1) ||
 				(direction == 'S' && position.getYPos() == game.getHeight() - 1) ||
 				(direction == 'W' && position.getXPos() == 0) ||
 				(direction == 'N' && position.getYPos() == 0)) {
+				die();
+				actionLog.push("You took an arrow to the knee!");
+			}
+			*/
+			
+			// find the last room
+			int numRoomsMoved = 0;
+			
+			if (direction == 'E') {
+				for (int col = position.getXPos(); col < game.getWidth(); col++) {
+					
+					if (col == game.getWidth() - 1) {
+						game.getRoom(position.getYPos(), col).addArrow();
+					}
+					
+					numRoomsMoved++;
+				}
+			} else if (direction == 'W') {
+				for (int col = position.getXPos(); col >= 0; col--) {
+					
+					if (col == 0) {
+						game.getRoom(position.getYPos(), col).addArrow();
+					}
+					numRoomsMoved++;
+				}
+				
+			} else if (direction == 'S') {
+				for (int row = position.getYPos(); row < game.getHeight(); row++) {
+					if (row == game.getHeight() - 1) {
+						game.getRoom(row, position.getXPos()).addArrow();
+					}
+					numRoomsMoved++;
+				}
+			} else if (direction == 'N') {
+				for (int row = position.getYPos(); row >= 0; row--) {
+					if (row == 0) {
+						game.getRoom(row, position.getXPos()).addArrow();
+					}
+					numRoomsMoved++;
+				}
+			}
+			
+			if (numRoomsMoved == 1) {
 				die();
 				actionLog.push("You took an arrow to the knee!");
 			}

@@ -41,6 +41,14 @@ public class Room {
 		return numArrows;
 	}
 	
+	public void addArrow () {
+		numArrows++;
+	}
+	
+	public void pickUpArrows () {
+		numArrows = 0;
+	}
+	
 	public boolean hasBats () {
 		return hasBats;
 	}
