@@ -378,4 +378,33 @@ public class GameTests {
 		assertTrue(timesPlayerMoved > 90);
 	}
 	
+	@Test
+	public void playerHasArrows () {
+		int numArrows = game.getPlayer().getNumArrows();
+
+		assertEquals(5, numArrows);
+	}
+	
+	@Test
+	public void playerHasFewerArrowsAfterShooting () {
+		int numArrows = game.getPlayer().getNumArrows();
+		
+		game.getPlayer().shoot('S');
+		
+		int numArrowsAfterShooting = game.getPlayer().getNumArrows();
+		
+		assertTrue(numArrows > numArrowsAfterShooting);
+	}
+	
+	@Test
+	public void playerDiesIfArrowBouncesBack () {
+		Player player = game.getPlayer();
+		
+		assertTrue(player.isAlive());
+		
+		player.shoot('W');
+		
+		assertTrue(!player.isAlive());
+	}
+	
 }

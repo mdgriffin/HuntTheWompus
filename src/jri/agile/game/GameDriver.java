@@ -26,7 +26,6 @@ public class GameDriver {
 			if (command == 'H') {
 				printHelp();
 			} else if (command == 'M') {
-				System.out.println("You want to move");
 				String[] moveDirection = userInput.split("\\s+");
 				
 				if (moveDirection.length != 2) {
@@ -39,7 +38,16 @@ public class GameDriver {
 				System.out.println(game.toString());
 				
 			} else if (command == 'S') {
-				System.out.println("You want to shoot");
+				String[] shootDirection = userInput.split("\\s+");
+				
+				if (shootDirection.length != 2) {
+					System.out.println("Invalid command please enter again");
+				} else {
+					char direction = shootDirection[1].charAt(0);
+					game.getPlayer().shoot(direction);
+				}
+				
+				System.out.println(game.toString());
 			} else if (command == 'P') {
 				System.out.println(game.printMap());
 			} else if (command != 'Q') {

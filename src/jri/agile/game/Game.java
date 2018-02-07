@@ -12,7 +12,7 @@ public class Game {
 		this.height = height;
 		this.width = width;
 		
-		this.player = new Player(0, 0);
+		this.player = new Player(this, 0, 0);
 		this.rick = new Rick(height - 1, width - 1);
 		
 		generateBoard();
@@ -70,6 +70,14 @@ public class Game {
 		if (row < height && col < width) {
 			gameBoard[row][col] = room;
 		}
+	}
+	
+	public int getWidth() {
+		return width;
+	}
+	
+	public int getHeight() {
+		return height;
 	}
 	
 	public Player getPlayer () {
@@ -167,6 +175,7 @@ public class Game {
 		Room room = gameBoard[player.getCurrentPosition().getYPos()][player.getCurrentPosition().getXPos()];
 		return room.hasBats();
 	}
+	
 	
 	public String printMap () {
 		String res = "|";
