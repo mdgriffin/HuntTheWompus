@@ -1,5 +1,7 @@
 package jri.agile.game;
 
+import java.util.ArrayList;
+
 public class Player extends GameEntity {
 	
 	private int numArrows;
@@ -80,6 +82,17 @@ public class Player extends GameEntity {
 		} else {
 			actionLog.push("Oh, no arrows left");
 		}
+	}
+	
+	public void sense () {
+		
+		// Check all adjacent rooms
+		
+		// if rick = ".......given.....up" || ".....left......down" || ".......run....." || "........ Hurt You" || "....say goodbye"
+		// if bats = "hear flapping of wings"
+		// if pit = "Feel a cool breeze nearby"
+		
+		ArrayList<Room> adjacentRooms = new ArrayList<>();
 	}
 	
 	public String toString () {
