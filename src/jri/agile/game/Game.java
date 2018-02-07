@@ -84,10 +84,25 @@ public class Game {
 		moveEntity (player, direction);
 		
 		if (isPlayerInRoomWithRick()) {
-			player.die("You were killed by Rick");
+			player.die();
+			player.actionLog.push("You were killed by Rick");
 		} else if (isPlayerInRoomWithPit()) {
-			player.die("You fell into the Pit");
+			player.die();
+			player.actionLog.push("You fell into the Pit");
+		} else if (isPlayerInRoomWithBats()) {
+			movePlayerRandom();
+			player.actionLog.push("You were moved to a random position by bats");
+		} else {
+			player.actionLog.push("You moved " + direction);
 		}
+	}
+	
+	public void movePlayerRandom () {
+		int randX = (int)(Math.random() * width);
+		int randY = (int)(Math.random() * height);
+		
+		player.getCurrentPosition().setXPos(randX);
+		player.getCurrentPosition().setYPos(randY);
 	}
 	
 	public void moveRick (char direction) {
@@ -141,6 +156,11 @@ public class Game {
 	public boolean isPlayerInRoomWithPit () {
 		Room room = gameBoard[player.getCurrentPosition().getYPos()][player.getCurrentPosition().getXPos()];
 		return room.hasPit();
+	}
+	
+	public boolean isPlayerInRoomWithBats () {
+		Room room = gameBoard[player.getCurrentPosition().getYPos()][player.getCurrentPosition().getXPos()];
+		return room.hasBats();
 	}
 	
 	public String printMap () {
