@@ -5,9 +5,9 @@ public class GameEntity {
 	private BoardPosition position;
 	private boolean isAlive;
 	
-	public GameEntity (int xPos, int yPos) {
+	public GameEntity (int yPos, int XPos) {
 		isAlive = true;
-		position = new BoardPosition(xPos, yPos);
+		position = new BoardPosition(yPos, XPos);
 	}
 
 	public BoardPosition getCurrentPosition () {

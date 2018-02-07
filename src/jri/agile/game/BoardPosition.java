@@ -4,9 +4,9 @@ public class BoardPosition {
 	private int xPos;
 	private int yPos;
 	
-	public BoardPosition (int xPos, int yPos) {
-		this.xPos = xPos;
+	public BoardPosition (int yPos, int xPos) {
 		this.yPos = yPos;
+		this.xPos = xPos;
 	}
 	
 	public int getXPos () {

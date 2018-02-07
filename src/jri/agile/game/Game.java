@@ -17,8 +17,8 @@ public class Game {
 		
 		gameBoard = new Room[height][width];
 		
-		for (int i = 0; i < width; i++) {
-			for (int j = 0; j < height; j++) {
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < width; j++) {
 				gameBoard[i][j] = new Room(i, j, Room.RoomType.Normal);
 			}
 		}
@@ -32,6 +32,12 @@ public class Game {
 		return gameBoard[x][y];
 	}
 	
+	public void setRoom (int x, int y, Room room) {
+		if (x < height && y < width) {
+			gameBoard[x][y] = room;
+		}
+	}
+	
 	public GameEntity getPlayer () {
 		return player;
 	}
@@ -43,7 +49,7 @@ public class Game {
 	public void movePlayer (char direction) {
 		moveEntity (player, direction);
 		
-		if (isPlayerInRoomWithRick()) {
+		if (isPlayerInRoomWithRick() || isPlayerInRoomWithPit()) {
 			player.die();
 		}
 	}
@@ -96,8 +102,13 @@ public class Game {
 		return player.getCurrentPosition().equals(rick.getCurrentPosition());
 	}
 	
+	public boolean isPlayerInRoomWithPit () {
+		Room room = gameBoard[player.getCurrentPosition().getYPos()][player.getCurrentPosition().getXPos()];
+		return room.hasPit();
+	}
+	
 	public String toString () {
-		return "Player is at " + player.getCurrentPosition().getXPos() + "," + player.getCurrentPosition().getYPos();
+		return "Player is at " +  player.getCurrentPosition().getYPos() + "," +  player.getCurrentPosition().getXPos();
 	}
 	
 

@@ -222,7 +222,46 @@ public class GameTests {
 		game.movePlayer('E');
 		
 		assertTrue(!player.isAlive());
+	}
+	
+	@Test 
+	public void roomCanBeSet () {
+		Room expectedRoom = new Room(0, 1, Room.RoomType.PitRoom);
+		game.setRoom(0, 1, expectedRoom);
+		Room actualRoom = game.getRoom(0, 1);
 		
+		assertEquals(1, expectedRoom.getColumn());
+		assertEquals(0, expectedRoom.getRow());
 		
+		assertEquals(expectedRoom, actualRoom);
+		
+		expectedRoom = new Room (1, 1, Room.RoomType.Normal);
+		game.setRoom(1, 1, expectedRoom);
+		actualRoom = game.getRoom(1, 1);
+		
+		assertEquals(1, expectedRoom.getColumn());
+		assertEquals(1, expectedRoom.getRow());
+		
+		assertEquals(expectedRoom, actualRoom);
+	}
+	
+	@Test
+	public void playerCanDieInPit () {
+		int row = 0;
+		int col = 1;
+		GameEntity player = game.getPlayer();
+		
+		assertEquals(0, player.getCurrentPosition().getXPos());
+		assertEquals(0, player.getCurrentPosition().getYPos());
+		
+		Room pitRoom = new Room(row, col, Room.RoomType.PitRoom);
+		
+		assertTrue(game.getPlayer().isAlive());
+		
+		game.setRoom(row, col, pitRoom);
+		
+		game.movePlayer('E');
+		
+		assertTrue(!game.getPlayer().isAlive());
 	}
 }
