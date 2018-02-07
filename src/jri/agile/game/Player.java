@@ -7,11 +7,13 @@ public class Player extends GameEntity {
 	}
 	
 	public String toString () {
-		if (actionLog.size() > 0) {
-			return actionLog.pop();
-		} else {
-			return "";
+		String res = "";
+		
+		while(actionLog.size() > 0) {
+			res += "\n" + actionLog.pop();
 		}
+		
+		return res;
 		
 		/*
 		if (isAlive()) {

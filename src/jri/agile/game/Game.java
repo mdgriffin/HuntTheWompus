@@ -83,6 +83,10 @@ public class Game {
 	public void movePlayer (char direction) {
 		moveEntity (player, direction);
 		
+		afterPlayerMove();
+	}
+	
+	private void afterPlayerMove () {
 		if (isPlayerInRoomWithRick()) {
 			player.die();
 			player.actionLog.push("You were killed by Rick");
@@ -92,8 +96,9 @@ public class Game {
 		} else if (isPlayerInRoomWithBats()) {
 			movePlayerRandom();
 			player.actionLog.push("You were moved to a random position by bats");
+			afterPlayerMove();
 		} else {
-			player.actionLog.push("You moved " + direction);
+			player.actionLog.push("You moved to a new room");
 		}
 	}
 	
