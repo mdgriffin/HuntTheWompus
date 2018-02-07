@@ -204,4 +204,25 @@ public class GameTests {
 		assertTrue(game.isPlayerInRoomWithRick());
 	}
 	
+	
+	@Test
+	public void playerCanDie () {
+		GameEntity player = game.getPlayer();
+		
+		game.movePlayer('S');
+		game.movePlayer('S');
+		game.movePlayer('S');
+		game.movePlayer('S');
+		
+		assertTrue(player.isAlive());
+		
+		game.movePlayer('E');
+		game.movePlayer('E');
+		game.movePlayer('E');
+		game.movePlayer('E');
+		
+		assertTrue(!player.isAlive());
+		
+		
+	}
 }

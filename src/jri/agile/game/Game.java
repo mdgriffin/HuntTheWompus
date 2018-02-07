@@ -42,6 +42,10 @@ public class Game {
 	
 	public void movePlayer (char direction) {
 		moveEntity (player, direction);
+		
+		if (isPlayerInRoomWithRick()) {
+			player.die();
+		}
 	}
 	
 	public void moveRick (char direction) {
