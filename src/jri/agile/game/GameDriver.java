@@ -3,19 +3,38 @@ package jri.agile.game;
 import java.util.Scanner;
 
 public class GameDriver {
-
+	
+	private static Scanner input;
+	
+	
 	public static void main (String[] args) {
 		
+		String userInput = "Y";
+		input = new Scanner(System.in);
+		
+		while (userInput.length() > 0 && userInput.toUpperCase().charAt(0) == 'Y') {
+			playGame();
+			
+			System.out.print("Enter (Y)es to play another game: ");
+			
+			userInput = input.nextLine();
+		}
+		
+		System.out.println("\n\nGoodbye, thanks for playing");
+		
+		System.exit(0);
+		
+	}
+	
+	private static void playGame () {
 		Game game = new Game(5, 5);
 		String userInput;
 		char command = ' ';
 		
-		Scanner input = new Scanner(System.in);
-		
 		printWelcome();
 		printHelp();
 
-		while (command != 'q' && !game.isOver()) {
+		while (command != 'Q' && !game.isOver()) {
 			
 			System.out.print("\n> ");
 			
@@ -54,11 +73,6 @@ public class GameDriver {
 			}
 			
 		}
-		
-		System.out.println("\n\nGoodbye, thanks for playing");
-		
-		System.exit(0);
-		
 	}
 	
 	private static void printWelcome () {
