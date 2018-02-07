@@ -1,11 +1,16 @@
 package jri.agile.game;
 
+import java.util.Scanner;
+
 public class GameDriver {
 
 	public static void main (String[] args) {
 		
 		Game game = new Game(5, 5);
 		GameEntity player = game.getPlayer();
+		String userInput;
+		
+		Scanner input = new Scanner(System.in);
 		
 		while (player.isAlive()) {
 			
@@ -15,6 +20,12 @@ public class GameDriver {
 				"\nTo Shoot enter (S)hoot followed by the direction (N, S, E, W)" +
 				"\nTo see these options again, type (H)elp"
 			);
+			
+			System.out.print("\n> ");
+			
+			userInput = input.nextLine();
+			
+			System.out.println("You entered: " + userInput);
 			
 			player.die();
 		}
