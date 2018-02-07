@@ -95,6 +95,9 @@ public class Game {
 	}
 	
 	private void afterPlayerMove () {
+		BoardPosition playerPos = getPlayer().getCurrentPosition();
+		Room currentRoom  = getRoom(playerPos.getYPos(), playerPos.getXPos());
+		
 		if (isPlayerInRoomWithRick()) {
 			player.die();
 			player.actionLog.push("You were killed by Rick");
@@ -107,6 +110,12 @@ public class Game {
 			afterPlayerMove();
 		} else {
 			player.actionLog.push("You moved to a new room");
+			
+			if (currentRoom.getNumArrows() > 0) {
+				player.actionLog.push("You picked up " + currentRoom.getNumArrows() + " arrow(s)");
+				player.pickUpArrows(currentRoom.getNumArrows());
+				currentRoom.removeArrows();
+			}
 		}
 	}
 	

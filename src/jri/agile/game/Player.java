@@ -14,6 +14,10 @@ public class Player extends GameEntity {
 	public int getNumArrows () {
 		return numArrows;
 	}
+	
+	public void pickUpArrows (int numArrows) {
+		this.numArrows += numArrows;
+	}
 
 	public void shoot (char direction) {
 		if (numArrows > 0) {

@@ -45,7 +45,7 @@ public class Room {
 		numArrows++;
 	}
 	
-	public void pickUpArrows () {
+	public void removeArrows () {
 		numArrows = 0;
 	}
 	
