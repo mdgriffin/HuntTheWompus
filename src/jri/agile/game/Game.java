@@ -145,68 +145,6 @@ public class Game {
 		rick.moveRandom();
 	}
 	
-	/*
-	public void movePlayerRandom () {
-		int randX = (int)(Math.random() * width);
-		int randY = (int)(Math.random() * height);
-		
-		player.getCurrentPosition().setXPos(randX);
-		player.getCurrentPosition().setYPos(randY);
-	}
-	*/
-	
-	/*
-	public void moveRick (char direction) {
-		if (!rick.isFrozen()) {
-			moveEntity (rick, direction);
-		}
-	}
-	*/
-	
-	/*
-	public void moveRickRandom () {
-		if (!rick.isFrozen()) {
-			int random = (int)(Math.random() * 5);
-			char direction;
-			
-			switch(random) {
-				case 0:
-					direction = 'N';
-					break;
-				case 1:
-					direction = 'E';
-					break;
-				case 2:
-					direction = 'S';
-					break;
-				case 3:
-					direction = 'W';
-					break;
-				default:
-					direction = 'R';
-					break;
-			}
-			
-			moveRick(direction);
-		}
-	}
-	*/
-	
-	/*
-	private void moveEntity (GameEntity entity, char direction) {
-		BoardPosition position = entity.getCurrentPosition();
-		
-		if (direction == 'E' && position.getXPos() < width - 1) {
-			position.setXPos (position.getXPos() + 1);
-		} else if (direction == 'S' && position.getYPos() < height - 1) {
-			position.setYPos(position.getYPos() + 1);
-		} else if (direction == 'W' && position.getXPos() > 0) {
-			position.setXPos (position.getXPos() - 1);
-		} else if (direction == 'N' && position.getYPos() > 0) {
-			position.setYPos(position.getYPos() - 1);
-		}
-	}
-	*/
 	
 	public boolean isPlayerInRoomWithRick () {
 		return player.getCurrentPosition().equals(rick.getCurrentPosition());
@@ -221,7 +159,6 @@ public class Game {
 		Room room = gameBoard[player.getCurrentPosition().getYPos()][player.getCurrentPosition().getXPos()];
 		return room.hasBats();
 	}
-	
 	
 	public String printMap () {
 		String res = "|";
