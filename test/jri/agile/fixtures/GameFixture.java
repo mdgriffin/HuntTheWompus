@@ -33,7 +33,9 @@ public class GameFixture {
 	}
 	
 	public int getWumpusPositionX () {
-		GameEntity wump = GameContext.game.getRick();
+		Game game = new Game(5, 5);
+		Rick wump = game.getRick();
+		wump.freeze();
 		
 		return  wump.getCurrentPosition().getXPos();
 	}
@@ -71,20 +73,29 @@ public class GameFixture {
 	}
 	
 	public String moveWumbusOneRoomWestEast() {
-		GameEntity wumbus = GameContext.game.getRick();
+		Game game = new Game(5, 5);
+		Rick wumbus = game.getRick();
+		wumbus.freeze();
+		
 		wumbus.move('W');
 		int posY = wumbus.getCurrentPosition().getYPos();
 		int posX = wumbus.getCurrentPosition().getXPos();
 		String fullPosition = "(" + posX + "," + posY + ")"; 
 		wumbus.move('E');
+		
 		int posFinalY = wumbus.getCurrentPosition().getYPos();
 		int posFinalX = wumbus.getCurrentPosition().getXPos();
 		fullPosition += ", (" + posFinalY + "," + posFinalX + ")";
 		return fullPosition;
 		
 	}
+	
 	public String moveWumbusOneRoomSouthNorth() {
-		GameEntity wumbus = GameContext.game.getRick();
+		Game game = new Game(5, 5);
+		
+		Rick wumbus = game.getRick();
+		wumbus.freeze();
+		
 		wumbus.move('N');
 		int posY = wumbus.getCurrentPosition().getYPos();
 		int posX = wumbus.getCurrentPosition().getXPos();
@@ -95,6 +106,7 @@ public class GameFixture {
 		fullPosition += ", (" + posFinalY + "," + posFinalX + ")";
 		return fullPosition;
 	}
+	
 	public String tryMovePlayerOffBoardWest () {
 		GameEntity player = GameContext.game.getPlayer();
 		player.move('W');
@@ -112,18 +124,30 @@ public class GameFixture {
 		String fullPosition = "(" + posX + "," + posY + ")"; 
 		return fullPosition;
 	}
+	
 	public String tryMoveWumbusOffBoardEast () {
-		GameEntity wumbus = GameContext.game.getRick();
+		Game game = new Game(5, 5);
+		
+		Rick wumbus = game.getRick();
+		wumbus.freeze();
+		
 		wumbus.move('E');
+		
 		int posY = wumbus.getCurrentPosition().getYPos();
 		int posX = wumbus.getCurrentPosition().getXPos();
 		String fullPosition = "(" + posX + "," + posY + ")"; 
+		
 		return fullPosition;
 	}
 	
 	public String tryMoveWumbusOffBoardSouth () {
-		GameEntity wumbus = GameContext.game.getRick();
+		Game game = new Game(5, 5);
+		
+		Rick wumbus = game.getRick();
+		wumbus.freeze();
+		
 		wumbus.move('S');
+		
 		int posY = wumbus.getCurrentPosition().getYPos();
 		int posX = wumbus.getCurrentPosition().getXPos();
 		String fullPosition = "(" + posX + "," + posY + ")"; 
@@ -173,9 +197,8 @@ public class GameFixture {
 		int movedSouth = 0;
 		int movedEast = 0;
 		int movedWest = 0;
-		int rested = 0;
 		
-		for (int i = 0; i < 10000; i++) {
+		for (int i = 0; i < 1000; i++) {
 			position.setXPos(1);
 			position.setYPos(1);
 			
@@ -189,21 +212,10 @@ public class GameFixture {
 				movedWest++;
 			} else if (position.getXPos() == 2) {
 				movedEast++;
-			} else if (position.getXPos() == 1 && position.getYPos() == 1) {
-				rested++;
 			}
 		}
-	
-		boolean ricksMovesRandomly = false;
-		if(movedNorth + movedSouth + movedEast + movedWest + rested == 10000)
-		{
-			if(movedNorth > 1500 && movedSouth > 1500 &&movedEast > 1500 &&movedWest > 1500 && rested > 1500)
-			{
-				ricksMovesRandomly = true;
-			}
-			else ricksMovesRandomly = false;
-		}	
-		return ricksMovesRandomly;
+		
+		return movedNorth > 200 && movedSouth > 200 && movedEast > 200 && movedWest > 200;
 	}
 
 	

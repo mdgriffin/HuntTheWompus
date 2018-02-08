@@ -7,7 +7,7 @@ Test
 !path bin
 
 !| import      |
-|jri.agile.game|
+|jri.agile.fixtures|
 !| GameContext|
 
 

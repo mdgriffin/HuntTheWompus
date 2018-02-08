@@ -7,7 +7,7 @@ Test
 !path bin
 
 !| import      |
-|jri.agile.game|
+|jri.agile.fixtures|
 !| GameContext|
 
 !3 Verify that player can pick up arrow after shooting

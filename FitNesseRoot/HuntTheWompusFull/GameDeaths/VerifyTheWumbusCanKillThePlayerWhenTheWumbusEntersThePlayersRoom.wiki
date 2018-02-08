@@ -7,7 +7,7 @@ Test
 !path bin
 
 !| import      |
-|jri.agile.game|
+|jri.agile.fixtures|
 !| GameContext|
 
 !3 Verify that Wumbus can move into players room and kill player

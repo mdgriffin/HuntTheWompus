@@ -6,7 +6,7 @@ Test
 !path bin
 
 !| import      |
-|jri.agile.game|
+|jri.agile.fixtures|
 !| GameContext|
 
 !3 Verify that the arrow is ONLY picked up at the final room that it landed in
