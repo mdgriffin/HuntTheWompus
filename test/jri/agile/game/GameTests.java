@@ -192,7 +192,6 @@ public class GameTests {
 		int movedSouth = 0;
 		int movedEast = 0;
 		int movedWest = 0;
-		int rested = 0;
 		
 		for (int i = 0; i < 1000; i++) {
 			position.setXPos(1);
@@ -208,18 +207,15 @@ public class GameTests {
 				movedWest++;
 			} else if (position.getXPos() == 2) {
 				movedEast++;
-			} else if (position.getXPos() == 1 && position.getYPos() == 1) {
-				rested++;
 			}
 		}
 	
-		assertEquals(1000, movedNorth + movedSouth + movedEast + movedWest + rested);
+		assertEquals(1000, movedNorth + movedSouth + movedEast + movedWest);
 		
-		assertTrue (movedNorth > 150);
-		assertTrue (movedSouth > 150);
-		assertTrue (movedEast > 150);
-		assertTrue (movedWest > 150);
-		assertTrue (rested > 150);
+		assertTrue (movedNorth > 200);
+		assertTrue (movedSouth > 200);
+		assertTrue (movedEast > 200);
+		assertTrue (movedWest > 200);
 	}
 	
 	@Test
