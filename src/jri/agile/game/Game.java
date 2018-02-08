@@ -101,9 +101,11 @@ public class Game {
 		return rick;
 	}
 	
-	public void afterPlayerMove () {
+	public void afterPlayerMove (boolean playerDidMove) {
 		BoardPosition playerPos = getPlayer().getCurrentPosition();
 		Room currentRoom  = getRoom(playerPos.getYPos(), playerPos.getXPos());
+		
+		rick.moveRandom();
 		
 		if (isPlayerInRoomWithRick()) {
 			player.die();
@@ -125,9 +127,16 @@ public class Game {
 		} else if (isPlayerInRoomWithBats()) {
 			player.moveRandom();
 			player.actionLog.addLast("You were moved to a random position by bats");
-			afterPlayerMove();
+			// TODO: Check that player actually moved
+			afterPlayerMove(true);
 		} else {
-			player.actionLog.addLast("You moved to a new room");
+			if (playerDidMove) {
+				player.actionLog.addLast("You moved to a new room");
+			} else {
+				player.actionLog.addLast("This direction is blocked");
+			}
+			
+			
 			player.sense();
 			
 			if (currentRoom.getNumArrows() > 0) {
@@ -136,9 +145,6 @@ public class Game {
 				currentRoom.removeArrows();
 			}
 		}
-		
-		rick.moveRandom();
-		
 	}
 	
 	public void afterPlayerShoot () {

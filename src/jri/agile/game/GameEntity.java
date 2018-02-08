@@ -33,16 +33,24 @@ public class GameEntity {
 		getCurrentPosition().setYPos(randY);
 	}
 	
-	public void move (char direction) {
+	public boolean move (char direction) {
+		boolean moved = false;
+		
 		if (direction == 'E' && position.getXPos() < game.getWidth() - 1) {
 			position.setXPos (position.getXPos() + 1);
+			moved = true;
 		} else if (direction == 'S' && position.getYPos() < game.getHeight() - 1) {
 			position.setYPos(position.getYPos() + 1);
+			moved = true;
 		} else if (direction == 'W' && position.getXPos() > 0) {
 			position.setXPos (position.getXPos() - 1);
+			moved = true;
 		} else if (direction == 'N' && position.getYPos() > 0) {
 			position.setYPos(position.getYPos() - 1);
+			moved = true;
 		}
+		
+		return moved;
 	}
 	
 	public boolean isAlive () {

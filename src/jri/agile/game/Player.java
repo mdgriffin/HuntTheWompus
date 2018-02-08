@@ -24,9 +24,12 @@ public class Player extends GameEntity {
 		this.numArrows += numArrows;
 	}
 	
-	public void move (char direction) {
-		super.move(direction);
-		game.afterPlayerMove();
+	public boolean move (char direction) {
+		boolean moved = super.move(direction);
+
+		game.afterPlayerMove(moved);
+		
+		return moved;
 	}
 
 	public void shoot (char direction) {
