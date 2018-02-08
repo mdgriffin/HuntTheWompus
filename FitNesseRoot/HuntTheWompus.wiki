@@ -2,12 +2,76 @@
 Test
 ---
 !define TEST_SYSTEM {slim}
-!path C:\Users\mdgri\eclipse-workspace\HuntTheWombus\HuntTheWompus\bin
+!path C:\Users\Eoghan\Documents\UncleBob\HuntTheWompus\bin
+
+!define postion "(0,0)"
+
 
 !| import |
 | jri.agile.game |
 
 !| GameContext |
 
+'''''Check that Player generates at start position 0,0'''''
+
 !| script | GameFixture |
 |check | getPlayerPositionX | 0 |
+|check | getPlayerPositionY | 0 |
+
+Check that Wumpus (Rick) generates at start position 4,4
+!| script | GameFixture |
+|check | getWumpusPositionX | 4 |
+|check | getWumpusPositionX | 4 |
+
+
+Verify that player can move from West to East + North to South in one movement and return to original position 
+!| script | GameFixture |
+|check |movePlayerOneRoomEastWest | (1,0), (0,0) |
+|check |movePlayerOneRoomNorthSouth| (0,1), (0,0)|
+
+Verify that wumbus can move from East to West + South to North in one movement and return to original position
+!| script | GameFixture |
+| check | moveWumbusOneRoomWestEast | (3,4), (4,4) |
+| check | moveWumbusOneRoomSouthNorth| (4,3), (4,4) |
+
+Verify the player cannot move off the board - West , North
+!| script | GameFixture |
+|check | tryMovePlayerOffBoardWest | (0,0) |
+| check | tryMovePlayerOffBoardNorth | (0,0) |
+
+Verify the wumbus cannot move off the board - East , South
+!| script | GameFixture |
+| check | tryMoveWumbusOffBoardEast | (4,4)|
+|check | tryMoveWumbusOffBoardSouth | (4,4)|
+
+
+
+Verify if map has a pit room
+!| script | GameFixture |
+| check | TestIfMapHasPitRoom | true|
+
+
+Verify if map has a bat room
+!| script | GameFixture |
+| check | TestIfMapHasBatRoom | true|
+
+
+Verify if map had a normal room
+!| script | GameFixture |
+| check | TestIfMapHasNormalRoom | true|
+
+
+Verify that Wumbus can move randomly to an adjacent room and rest
+!| script | GameFixture |
+| check | TestMoveRickRandomly | true|
+
+
+
+Verify that player dies when they enter the pit room
+!| script | GameFixture |
+| check | doesPlayerDieInPitRoom | true|
+
+
+Verify if player can get killed by rick
+!| script | GameFixture |
+| check | doesRickKillPlayer |false|
