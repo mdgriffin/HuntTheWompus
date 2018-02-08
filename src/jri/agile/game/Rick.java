@@ -43,8 +43,11 @@ public class Rick extends GameEntity {
 					break;
 			}
 			
-			move(direction);
+			if (!move(direction)) {
+				moveRandom();
+			}
 		}
+		
 	}
 	
 	public boolean isFrozen () {

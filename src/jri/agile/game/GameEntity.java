@@ -29,6 +29,10 @@ public class GameEntity {
 		int randX = (int)(Math.random() * game.getWidth());
 		int randY = (int)(Math.random() * game.getHeight());
 		
+		if (randX == getCurrentPosition().getXPos() && randY == getCurrentPosition().getXPos()) {
+			moveRandom();
+		}
+		
 		getCurrentPosition().setXPos(randX);
 		getCurrentPosition().setYPos(randY);
 	}

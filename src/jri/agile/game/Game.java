@@ -126,16 +126,14 @@ public class Game {
 			player.actionLog.addLast("You fell into the Pit");
 		} else if (isPlayerInRoomWithBats()) {
 			player.moveRandom();
-			player.actionLog.addLast("You were moved to a random position by bats");
-			// TODO: Check that player actually moved
+			player.actionLog.addLast("Ah, bats have moved caught you and are dragging you to a different room");
 			afterPlayerMove(true);
 		} else {
 			if (playerDidMove) {
 				player.actionLog.addLast("You moved to a new room");
 			} else {
-				player.actionLog.addLast("This direction is blocked");
+				player.actionLog.addLast("Route blocked");
 			}
-			
 			
 			player.sense();
 			
