@@ -90,8 +90,6 @@ public class Player extends GameEntity {
 				die();
 				actionLog.addLast("You took an arrow to the knee!");
 			}
-			
-			
 		} else {
 			actionLog.addLast("Oh, no arrows left");
 		}
@@ -136,6 +134,11 @@ public class Player extends GameEntity {
 				actionLog.addLast("You hear something near by, \"....give.....up\"");
 			}
 		}
+	}
+	
+	public void rest () {
+		actionLog.addLast("Resting");
+		game.afterPlayerMove(false);
 	}
 	
 	public String toString () {

@@ -69,6 +69,9 @@ public class GameDriver {
 				System.out.println(game.toString());
 			} else if (command == 'P') {
 				System.out.println(game.printMap());
+			} else if (command == 'R') {
+				player.rest();
+				System.out.println(game.toString());
 			} else if (command != 'Q') {
 				System.out.print("\nInvalid Command, please enter again: ");
 			}

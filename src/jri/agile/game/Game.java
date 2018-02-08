@@ -109,7 +109,7 @@ public class Game {
 		
 		if (isPlayerInRoomWithRick()) {
 			player.die();
-			player.actionLog.addLast("You were killed by Rick");
+			player.actionLog.addLast("You were killed by Rick!");
 			
 			// throws IOException, URISyntaxException
 			/*
@@ -126,13 +126,13 @@ public class Game {
 			player.actionLog.addLast("You fell into the Pit");
 		} else if (isPlayerInRoomWithBats()) {
 			player.moveRandom();
-			player.actionLog.addLast("Ah, bats have moved caught you and are dragging you to a different room");
+			player.actionLog.addLast("Ah, bats have moved caught you and are dragging you to a different room!");
 			afterPlayerMove(true);
 		} else {
 			if (playerDidMove) {
 				player.actionLog.addLast("You moved to a new room");
 			} else {
-				player.actionLog.addLast("Route blocked");
+				player.actionLog.addLast("Have not moved..");
 			}
 			
 			player.sense();
