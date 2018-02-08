@@ -1,0 +1,19 @@
+---
+Test
+---
+<test page>
+
+!define TEST_SYSTEM {slim}
+!path bin
+
+!| import      |
+|jri.agile.game|
+
+!| GameContext|
+
+
+!3 Check that Player generates at start position 0,0
+
+!| script|GameFixture         |
+|check   |getPlayerPositionX|0|
+|check   |getPlayerPositionY|0|

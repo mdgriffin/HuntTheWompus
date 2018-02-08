@@ -1,0 +1,15 @@
+---
+Test
+---
+<test page>
+
+!define TEST_SYSTEM {slim}
+!path bin
+
+!| import      |
+|jri.agile.game|
+!| GameContext|
+
+!3 Verify that player can pick up arrow after shooting
+!| script|GameFixture                |
+|check   |CanPlayerPickUpArrowAfterShooting|true|

@@ -1,0 +1,14 @@
+---
+Test
+---
+<test page>
+!define TEST_SYSTEM {slim}
+!path bin
+
+!| import      |
+|jri.agile.game|
+!| GameContext|
+
+!3 Verify if map has a pit room
+!| script|GameFixture             |
+|check   |TestIfMapHasPitRoom|true|

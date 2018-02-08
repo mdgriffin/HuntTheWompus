@@ -2,76 +2,101 @@
 Test
 ---
 !define TEST_SYSTEM {slim}
-!path C:\Users\Eoghan\Documents\UncleBob\HuntTheWompus\bin
+!path bin
 
-!define postion "(0,0)"
+!| import      |
+|jri.agile.game|
 
+!| GameContext|
 
-!| import |
-| jri.agile.game |
+!1 '''Player/Wumpus Generation & Movement'''
 
-!| GameContext |
+!3 Check that Player generates at start position 0,0
 
-'''''Check that Player generates at start position 0,0'''''
+!| script|GameFixture         |
+|check   |getPlayerPositionX|0|
+|check   |getPlayerPositionY|0|
 
-!| script | GameFixture |
-|check | getPlayerPositionX | 0 |
-|check | getPlayerPositionY | 0 |
-
-Check that Wumpus (Rick) generates at start position 4,4
-!| script | GameFixture |
-|check | getWumpusPositionX | 4 |
-|check | getWumpusPositionX | 4 |
-
-
-Verify that player can move from West to East + North to South in one movement and return to original position 
-!| script | GameFixture |
-|check |movePlayerOneRoomEastWest | (1,0), (0,0) |
-|check |movePlayerOneRoomNorthSouth| (0,1), (0,0)|
-
-Verify that wumbus can move from East to West + South to North in one movement and return to original position
-!| script | GameFixture |
-| check | moveWumbusOneRoomWestEast | (3,4), (4,4) |
-| check | moveWumbusOneRoomSouthNorth| (4,3), (4,4) |
-
-Verify the player cannot move off the board - West , North
-!| script | GameFixture |
-|check | tryMovePlayerOffBoardWest | (0,0) |
-| check | tryMovePlayerOffBoardNorth | (0,0) |
-
-Verify the wumbus cannot move off the board - East , South
-!| script | GameFixture |
-| check | tryMoveWumbusOffBoardEast | (4,4)|
-|check | tryMoveWumbusOffBoardSouth | (4,4)|
+!3 Check that Wumpus (Rick) generates at start position 4,4
+!| script|GameFixture         |
+|check   |getWumpusPositionX|4|
+|check   |getWumpusPositionX|4|
 
 
+!3 Verify that player can move from West to East + North to South in one movement and return to original position 
+!| script|GameFixture                             |
+|check   |movePlayerOneRoomEastWest  |(1,0), (0,0)|
+|check   |movePlayerOneRoomNorthSouth|(0,1), (0,0)|
 
-Verify if map has a pit room
-!| script | GameFixture |
-| check | TestIfMapHasPitRoom | true|
+!3 Verify that wumbus can move from East to West + South to North in one movement and return to original position
+!| script|GameFixture                             |
+|check   |moveWumbusOneRoomWestEast  |(3,4), (4,4)|
+|check   |moveWumbusOneRoomSouthNorth|(4,3), (4,4)|
 
+!3 Verify the player cannot move off the board - West , North
+!| script|GameFixture                     |
+|check   |tryMovePlayerOffBoardWest |(0,0)|
+|check   |tryMovePlayerOffBoardNorth|(0,0)|
 
-Verify if map has a bat room
-!| script | GameFixture |
-| check | TestIfMapHasBatRoom | true|
+!3 Verify the wumbus cannot move off the board - East , South
+!| script|GameFixture                     |
+|check   |tryMoveWumbusOffBoardEast |(4,4)|
+|check   |tryMoveWumbusOffBoardSouth|(4,4)|
 
-
-Verify if map had a normal room
-!| script | GameFixture |
-| check | TestIfMapHasNormalRoom | true|
-
-
-Verify that Wumbus can move randomly to an adjacent room and rest
-!| script | GameFixture |
-| check | TestMoveRickRandomly | true|
-
-
-
-Verify that player dies when they enter the pit room
-!| script | GameFixture |
-| check | doesPlayerDieInPitRoom | true|
+!3 Verify that Wumbus can move randomly to an adjacent room and rest
+!| script|GameFixture              |
+|check   |TestMoveRickRandomly|true|
 
 
-Verify if player can get killed by rick
-!| script | GameFixture |
-| check | doesRickKillPlayer |false|
+!1 '''Creating Room types'''
+
+
+!3 Verify if map has a pit room
+!| script|GameFixture             |
+|check   |TestIfMapHasPitRoom|true|
+
+
+!3 Verify if map has a bat room
+!| script|GameFixture             |
+|check   |TestIfMapHasBatRoom|true|
+
+
+!3 Verify if map had a normal room
+!| script|GameFixture                |
+|check   |TestIfMapHasNormalRoom|true|
+
+!1 '''Player can die in numerous ways'''
+
+!3 Verify that player dies when they enter the pit room
+!| script|GameFixture                |
+|check   |doesPlayerDieInPitRoom|true|
+
+
+!3 Verify that Wumbus can move into players room and kill player
+!| script|GameFixture            |
+|check   |doesRickKillPlayer|true|
+
+
+!3 Verify that arrow count is five at game startup
+!| script|GameFixture             |
+|check   |checkInitialArrowCount|5|
+
+!1 '''Arrow functionality'''
+
+!3 Verify that arrow count decreases when player shoots an arrow
+!| script|GameFixture                |
+|check   |doesArrowCountDecrease|true|
+
+!3 Verify that player can pick up arrow after shooting
+!| script|GameFixture                |
+|check   |CanPlayerPickUpArrowAfterShooting|true|
+
+!3 Verify that the arrow is ONLY picked up at the final room that it landed in
+!| script|GameFixture                |
+|check   |arrowCountWhileMovingThroughRoomAfterShot|5,4,4,4,5|
+
+!3 Verify that when Player shoots arrow into same room, player dies
+!| script|GameFixture                |
+|check   |doesPlayerKillThemsevlesWithArrow|true|
+
+

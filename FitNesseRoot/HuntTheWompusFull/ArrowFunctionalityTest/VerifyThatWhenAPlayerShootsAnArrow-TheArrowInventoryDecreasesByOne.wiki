@@ -1,0 +1,18 @@
+---
+Test
+---
+<test page>
+
+!define TEST_SYSTEM {slim}
+!path bin
+
+!| import      |
+|jri.agile.game|
+
+!| GameContext|
+
+
+
+!3 Verify that arrow count decreases when player shoots an arrow
+!| script|GameFixture                |
+|check   |doesArrowCountDecrease|true|

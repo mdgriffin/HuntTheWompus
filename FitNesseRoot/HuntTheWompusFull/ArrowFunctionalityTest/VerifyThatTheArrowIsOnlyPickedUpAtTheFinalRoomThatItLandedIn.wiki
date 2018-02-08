@@ -1,0 +1,14 @@
+---
+Test
+---
+<test page>
+!define TEST_SYSTEM {slim}
+!path bin
+
+!| import      |
+|jri.agile.game|
+!| GameContext|
+
+!3 Verify that the arrow is ONLY picked up at the final room that it landed in
+!| script|GameFixture                |
+|check   |arrowCountWhileMovingThroughRoomAfterShot|5,4,4,4,5|

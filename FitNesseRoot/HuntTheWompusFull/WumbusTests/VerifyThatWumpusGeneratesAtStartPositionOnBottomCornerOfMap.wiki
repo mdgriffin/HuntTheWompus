@@ -1,0 +1,16 @@
+---
+Test
+---
+<test page>
+!define TEST_SYSTEM {slim}
+!path bin
+
+!| import      |
+|jri.agile.game|
+
+!| GameContext|
+
+!3 Check that Wumpus (Rick) generates at start position 4,4
+!| script|GameFixture         |
+|check   |getWumpusPositionX|4|
+|check   |getWumpusPositionX|4|

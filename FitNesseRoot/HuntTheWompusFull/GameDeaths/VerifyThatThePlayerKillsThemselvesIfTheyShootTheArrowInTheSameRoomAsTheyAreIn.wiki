@@ -1,0 +1,15 @@
+---
+Test
+---
+<test page>
+!define TEST_SYSTEM {slim}
+!path bin
+
+!| import      |
+|jri.agile.game|
+
+!| GameContext|
+
+!3 Verify that when Player shoots arrow into same room, player dies
+!| script|GameFixture                |
+|check   |doesPlayerKillThemsevlesWithArrow|true|

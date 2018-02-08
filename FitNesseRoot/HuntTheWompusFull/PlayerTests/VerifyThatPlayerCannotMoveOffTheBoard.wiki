@@ -1,0 +1,21 @@
+---
+Test
+---
+<test page>
+!define TEST_SYSTEM {slim}
+!path bin
+
+!| import      |
+|jri.agile.game|
+
+!| GameContext|
+
+!3 Verify the player cannot move off the board - West , North
+!| script|GameFixture                     |
+|check   |tryMovePlayerOffBoardWest |(0,0)|
+|check   |tryMovePlayerOffBoardNorth|(0,0)|
+
+!3 Verify the wumbus cannot move off the board - East , South
+!| script|GameFixture                     |
+|check   |tryMoveWumbusOffBoardEast |(4,4)|
+|check   |tryMoveWumbusOffBoardSouth|(4,4)|

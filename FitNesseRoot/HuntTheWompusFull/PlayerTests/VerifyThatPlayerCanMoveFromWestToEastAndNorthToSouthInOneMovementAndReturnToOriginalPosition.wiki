@@ -1,0 +1,14 @@
+---
+Test
+---
+<test page>
+!define TEST_SYSTEM {slim}
+!path bin
+!| import      |
+|jri.agile.game|
+!| GameContext|
+
+
+!| script|GameFixture                             |
+|check   |movePlayerOneRoomEastWest  |(1,0), (0,0)|
+|check   |movePlayerOneRoomNorthSouth|(0,1), (0,0)|

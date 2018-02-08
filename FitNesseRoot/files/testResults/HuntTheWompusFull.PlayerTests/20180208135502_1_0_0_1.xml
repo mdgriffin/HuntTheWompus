@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<suiteResults>
+  <FitNesseVersion>v20180127</FitNesseVersion>
+  <rootPath>HuntTheWompusFull.PlayerTests</rootPath>
+  <pageHistoryReference>
+    <name>HuntTheWompusFull.PlayerTests.VerifyPlayerGeneratesAtStartPositionOnTheMap</name>
+    <date>2018-02-08T13:55:02+00:00</date>
+    <pageHistoryLink>HuntTheWompusFull.PlayerTests.VerifyPlayerGeneratesAtStartPositionOnTheMap?pageHistory&amp;resultDate=20180208135502</pageHistoryLink>
+    <counts>
+      <right>2</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>298</runTimeInMillis>
+  </pageHistoryReference>
+  <pageHistoryReference>
+    <name>HuntTheWompusFull.PlayerTests.VerifyThatPlayerCanMoveFromWestToEastAndNorthToSouthInOneMovementAndReturnToOriginalPosition</name>
+    <date>2018-02-08T13:55:03+00:00</date>
+    <pageHistoryLink>HuntTheWompusFull.PlayerTests.VerifyThatPlayerCanMoveFromWestToEastAndNorthToSouthInOneMovementAndReturnToOriginalPosition?pageHistory&amp;resultDate=20180208135503</pageHistoryLink>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>1</exceptions>
+    </counts>
+    <runTimeInMillis>8</runTimeInMillis>
+  </pageHistoryReference>
+  <executionLog>
+    <testSystem>slim:fitnesse.slim.SlimService</testSystem>
+    <command>"C:\Program Files\Java\jdk1.8.0_25\bin\java" -cp C:\Users\Eoghan\Documents\UncleBob\Wumpus08Feb\fitnesse-standalone.jar;bin fitnesse.slim.SlimService 1</command>
+    <exitCode>0</exitCode>
+    <stdOut></stdOut>
+    <stdErr></stdErr>
+  </executionLog>
+  <executionLog>
+    <testSystem>fit:fit.FitServer</testSystem>
+    <command>"C:\Program Files\Java\jdk1.8.0_25\bin\java" -cp C:\Users\Eoghan\Documents\UncleBob\Wumpus08Feb\fitnesse-standalone.jar fit.FitServer EOGHAN-PC 54828 3863</command>
+    <exitCode>1</exitCode>
+    <stdOut></stdOut>
+    <stdErr></stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>1</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>1</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>1850</totalRunTimeInMillis>
+</suiteResults>
+

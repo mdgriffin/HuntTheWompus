@@ -1,0 +1,15 @@
+---
+Test
+---
+<test page>
+
+!define TEST_SYSTEM {slim}
+!path bin
+
+!| import      |
+|jri.agile.game|
+!| GameContext|
+
+!3 Verify that Wumbus can move into players room and kill player
+!| script|GameFixture            |
+|check   |doesRickKillPlayer|true|

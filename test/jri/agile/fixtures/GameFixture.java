@@ -3,13 +3,7 @@ package jri.agile.fixtures;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import jri.agile.game.BoardPosition;
-import jri.agile.game.Game;
-import jri.agile.game.GameEntity;
-import jri.agile.game.Player;
-import jri.agile.game.Rick;
-import jri.agile.game.Room;
-import jri.agile.game.Room.RoomType;
+import jri.agile.game.*;
 
 public class GameFixture {
 	
@@ -173,7 +167,7 @@ public class GameFixture {
 	public boolean TestMoveRickRandomly()
 	{
 		Game game = new Game(3, 3);
-		Rick rick = game.getRick();
+		GameEntity rick = game.getRick();
 		BoardPosition position = rick.getCurrentPosition();
 		int movedNorth = 0;
 		int movedSouth = 0;
@@ -216,44 +210,153 @@ public class GameFixture {
 	
 	public boolean doesPlayerDieInPitRoom()
 	{
-		int row = 0, col = 1;
 		boolean isPlayerDead = false;
-		Player player = gc.game.getPlayer();
-
-		Room pitRoom = new Room(row, col, Room.RoomType.PitRoom);		
-		GameContext.game.setRoom(row, col, pitRoom);
+		Game gameWithPit = new Game(2, 2);
+		Player player = gameWithPit.getPlayer();
+		gameWithPit.setRoom(0, 0, new Room (2, 2, Room.RoomType.Normal));
+		gameWithPit.setRoom(0, 1, new Room (2, 2, Room.RoomType.Normal));
+		gameWithPit.setRoom(1, 0, new Room (2, 2, Room.RoomType.Normal));
+		gameWithPit.setRoom(1, 1, new Room (2, 2, Room.RoomType.PitRoom));
 		player.move('E');
-		if(GameContext.game.getPlayer().isAlive()){
-			isPlayerDead = false;
+		player.move('S');
+		
+		if(gameWithPit.getPlayer().isAlive() == false)
+		{
+			isPlayerDead = true;
 		}
-		else isPlayerDead = true;
-
+		else isPlayerDead = false;
+		
 		return isPlayerDead;
+	}
+	
+	public static Game buildEmptyMap (int height, int width) {
+		Game game = new Game(height, width);
+		
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < width; j++) {
+				game.setRoom(i, j, new Room (height, width, Room.RoomType.Normal));
+			}
+		}
+		
+		return game;
 	}
 	
 	public boolean doesRickKillPlayer()
 	{
-		boolean dead =false;
-		Game theGame = new Game(5, 5);
-		
+		boolean isPlayerDead = false;
+		Game theGame = buildEmptyMap(2, 1);
 		GameEntity theplayer = theGame.getPlayer();
 		GameEntity wumbus = theGame.getRick();
-		BoardPosition positionRick = wumbus.getCurrentPosition();
-		BoardPosition positionPlayer = theplayer.getCurrentPosition();
-		int x = positionRick.getXPos();
-		int y = positionRick.getYPos();
-		int x1 = positionPlayer.getXPos();
-		int y1 = positionPlayer.getYPos();
+		int i = 0;
+		while(i < 100){
+			theplayer.move('R');
+			i++;
+		}
 		
-		theplayer.move('E');
-		theplayer.move('E');
-		theplayer.move('E');
-		theplayer.move('E');
-		theplayer.move('S');
-		theplayer.move('S');
-		theplayer.move('S');
-		theplayer.move('S');
+		if(theGame.getPlayer().isAlive() == false)
+		{
+			isPlayerDead = true;
+		}
+		else isPlayerDead = false;
 		
-		return theplayer.isAlive();
+		return isPlayerDead;
 	}
+	
+	
+	public int checkInitialArrowCount(){
+		Game theGame = buildEmptyMap(2, 2);
+		int numArrowsAtStartOfGame = theGame.getPlayer().getNumArrows();
+		
+		return numArrowsAtStartOfGame;
+	}
+	
+	
+	
+	public boolean doesArrowCountDecrease()
+	{
+		boolean doesArrowCountDecrease = false;
+		Game theGame = buildEmptyMap(2, 2);
+		int numArrowsBefore = theGame.getPlayer().getNumArrows();
+		
+		theGame.getPlayer().shoot('S');
+		
+		int numArrowsAfterShooting = theGame.getPlayer().getNumArrows();
+		
+		if(numArrowsBefore > numArrowsAfterShooting)
+		{
+			doesArrowCountDecrease = true;
+		}
+		else doesArrowCountDecrease = false;
+		
+		return doesArrowCountDecrease;
+	}
+	
+	
+	public boolean CanPlayerPickUpArrowAfterShooting()
+	{
+		boolean wasArrowPickedUp = false;		
+		Game game = buildEmptyMap(5, 5);
+		Player player = game.getPlayer();
+		player.move('E');
+		int arrowsFull = player.getNumArrows();
+		player.shoot('W');
+		int arrowsAfterOneShot = player.getNumArrows();
+		player.move('W');
+		int arrowsAfterPickedUp = player.getNumArrows();
+		
+		if(arrowsFull > arrowsAfterOneShot && arrowsFull == arrowsAfterPickedUp)
+		{
+			wasArrowPickedUp = true;
+		}
+		else wasArrowPickedUp = false;
+		
+		return wasArrowPickedUp;
+	}
+	
+	public String arrowCountWhileMovingThroughRoomAfterShot()
+	{
+		Game game = buildEmptyMap(5, 5);
+		Player player = game.getPlayer();
+		player.move('E');
+		int arrowsFull = player.getNumArrows();
+		player.shoot('S');
+		player.move('S');
+		int arrowsAfterShotRoomOne = player.getNumArrows();
+		player.move('S');
+		int arrowsAfterShotRoomTwo = player.getNumArrows();
+		player.move('S');
+		int arrowsAfterShotRoomThree = player.getNumArrows();
+		player.move('S');
+		int arrowsAfterPickedUp = player.getNumArrows();
+		
+		String ArrowCount = arrowsFull + "," + arrowsAfterShotRoomOne + "," 
+							+ arrowsAfterShotRoomTwo + "," + arrowsAfterShotRoomThree + "," + arrowsAfterPickedUp;
+		
+		return ArrowCount;
+	}
+
+	
+	public boolean doesPlayerKillThemsevlesWithArrow()
+	{
+		boolean isPlayerDead = false;
+		Game game = buildEmptyMap(5, 5);
+		Player player = game.getPlayer();
+		player.shoot('W');
+		
+		if(game.getPlayer().isAlive() == false)
+		{
+			isPlayerDead = true;
+		}
+		else isPlayerDead = false;
+		
+		return isPlayerDead;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }

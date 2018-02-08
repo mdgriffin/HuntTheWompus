@@ -1,0 +1,14 @@
+---
+Test
+---
+<test page>
+!define TEST_SYSTEM {slim}
+!path bin
+!| import      |
+|jri.agile.game|
+!| GameContext|
+
+!3 Verify that wumbus can move from East to West + South to North in one movement and return to original position
+!| script|GameFixture                             |
+|check   |moveWumbusOneRoomWestEast  |(3,4), (4,4)|
+|check   |moveWumbusOneRoomSouthNorth|(4,3), (4,4)|
