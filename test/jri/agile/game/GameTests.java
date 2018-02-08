@@ -589,15 +589,31 @@ public class GameTests {
 	public void playerCanSense () {
 		Game game = buildMap();
 		Player player = game.getPlayer();
+		game.getRick().freeze();
 		LinkedList<String> log = player.getActionLog();
+		String lastLogItem;
 		
 		game.movePlayer('E');
 		game.movePlayer('E');
 		game.movePlayer('E');
 		
-		String lastLogItem = log.getLast();
+		lastLogItem = log.getLast();
 		
 		assertEquals("You hear the flapping of wings nearby.", lastLogItem);
+		
+		game.movePlayer('S');
+		game.movePlayer('S');
+		
+		lastLogItem = log.getLast();
+		
+		assertEquals("You feel a cool breeze nearby.", lastLogItem);
+		
+		game.movePlayer('E');
+		game.movePlayer('S');
+		
+		lastLogItem = log.getLast();
+		
+		assertEquals("You hear something near by, \"....give.....up\"", lastLogItem);
 	}
 	
 }
