@@ -106,11 +106,13 @@ public class Player extends GameEntity {
 		BoardPosition pos = getCurrentPosition();
 		BoardPosition rickPos = game.getRick().getCurrentPosition();
 		
-		if (pos.getYPos() > 0) {
+		// Room to North
+		if (pos.getYPos() > 0 ) {
 			adjacentRooms.add(game.getRoom(pos.getYPos() - 1, pos.getXPos()));
 		}
 		
-		if (pos.getYPos() < game.getHeight()) {
+		// Room to south
+		if (pos.getYPos() < game.getHeight() - 1) {
 			adjacentRooms.add(game.getRoom(pos.getYPos() + 1, pos.getXPos()));
 		}
 		
@@ -118,7 +120,7 @@ public class Player extends GameEntity {
 			adjacentRooms.add(game.getRoom(pos.getYPos(), pos.getXPos() - 1));
 		}
 		
-		if (pos.getXPos() < game.getWidth()) {
+		if (pos.getXPos() < game.getWidth() - 1) {
 			adjacentRooms.add(game.getRoom(pos.getYPos(), pos.getXPos() + 1));
 		}
 		
