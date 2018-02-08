@@ -45,9 +45,9 @@ public class Game {
 			int randX = (int)(Math.random() * width);
 			int randY = (int)(Math.random() * height);
 			
-			if (playerPos.getXPos() != randX && playerPos.getYPos() != randY 
-				&& rickPos.getXPos() != randX && rickPos.getYPos() != randY
-				&& !getRoom(randY, randX).hasPit()) {
+			if ((playerPos.getXPos() != randX && playerPos.getYPos() != randY) 
+				&& (rickPos.getXPos() != randX && rickPos.getYPos() != randY)
+				&& (!getRoom(randY, randX).hasPit())) {
 				setRoom(randY, randX, new Room(randY, randX, Room.RoomType.PitRoom));
 				numPits++;
 			}
@@ -57,10 +57,10 @@ public class Game {
 			int randX = (int)(Math.random() * width);
 			int randY = (int)(Math.random() * height);
 			
-			if (playerPos.getXPos() != randX && playerPos.getYPos() != randY 
-				&& rickPos.getXPos() != randX && rickPos.getYPos() != randY
-				&& !getRoom(randY, randX).hasPit()
-				&& !getRoom(randY, randX).hasBats()) {
+			if ((playerPos.getXPos() != randX && playerPos.getYPos() != randY) 
+				&& (rickPos.getXPos() != randX && rickPos.getYPos() != randY)
+				&& (!getRoom(randY, randX).hasPit())
+				&& (!getRoom(randY, randX).hasBats())) {
 				setRoom(randY, randX, new Room(randY, randX, Room.RoomType.BatRoom));
 				numBats++;
 			}
