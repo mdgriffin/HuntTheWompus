@@ -1,0 +1,19 @@
+---
+Test
+---
+<test page>
+!define TEST_SYSTEM {slim}
+!path bin
+
+!| import      |
+|jri.agile.fixtures|
+!| GameContext|
+
+!| AreEntitiesInCorrectStartPosition           |
+|numRows|numColumns|getRickYPos?| getRickXPos? |
+|5         |5      |4           | 4            |
+|6         |6      |5           | 5            |
+|7         |7      |6           | 6            |
+|8         |8      |7           | 7            |
+|9         |9      |8           | 8            |
+|10        |10     |9           | 9            |

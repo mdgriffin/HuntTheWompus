@@ -1,3 +1,5 @@
+|HuntTheWompusFull.MoveDecisions.playerCanMoveInAllDirections||16:17:59 Thu, Feb 08, 2018|
+|HuntTheWompusFull.MoveDecisions||15:59:43 Thu, Feb 08, 2018|
 |HuntTheWompusFull.WumbusTests.VerifyThatWumpusGeneratesAtStartPositionOnBottomCornerOfMap||15:42:17 Thu, Feb 08, 2018|
 |HuntTheWompusFull.WumbusTests.VerifyThatWumbusCannotMoveOffTheBoardInAnyDirection||15:42:08 Thu, Feb 08, 2018|
 |HuntTheWompusFull.WumbusTests.VerifyThatWumbusCanMoveRandomlyToAnyAdjacentRoom||15:41:58 Thu, Feb 08, 2018|
