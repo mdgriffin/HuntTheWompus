@@ -551,35 +551,33 @@ public class GameTests {
 		assertEquals(5, player.getNumArrows());
 	}
 	
-	/*
 	@Test
 	public void rickMovesAfterPlayerShoot () {
-		int numTimesRickMove = 0;
-		game.setPlayer(new Player(game, 1000, 0, 0));
+		int numTimesRickMoved = 0;
+		int numShots = 100;
+		game.setPlayer(new Player(numShots, game, 0, 0));
 		Player player = game.getPlayer();
-		BoardPosition currentRickPosition;
-		BoardPosition lastRickPosition;
+		int positionXBeforeShoot;
+		int positionYBeforeShoot;
+		int positionXAfterShoot;
+		int positionYAfterShoot;
 		
-		for (int i = 0; i < 100; i++) {
-			
-			currentRickPosition = game.getRick().getCurrentPosition();
+		for (int i = 0; i < numShots; i++) {
+			positionXBeforeShoot = game.getRick().getCurrentPosition().getXPos();
+			positionYBeforeShoot = game.getRick().getCurrentPosition().getYPos();
 			
 			player.shoot('S');
 			
-			lastRickPosition = game.getRick().getCurrentPosition();
+			positionXAfterShoot = game.getRick().getCurrentPosition().getXPos();
+			positionYAfterShoot = game.getRick().getCurrentPosition().getYPos();
 			
-			if (!lastRickPosition.equals(game.getRick().getCurrentPosition())) {
-				numTimesRickMove++;
+			if (positionXBeforeShoot != positionXAfterShoot || positionYBeforeShoot != positionYAfterShoot) {
+				numTimesRickMoved++;
 			}
-			
-			System.out.println(lastRickPosition + " " + game.getRick().getCurrentPosition());
 		}
 		
-		System.out.println("Num times rick move: " + numTimesRickMove);
-		
-		assertTrue(numTimesRickMove > 75);
+		assertEquals(numShots, numTimesRickMoved);
 	}
-	*/
 	
 	@Test
 	public void playerCanSense () {
