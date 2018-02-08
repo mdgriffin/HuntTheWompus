@@ -6,15 +6,13 @@ import java.util.Iterator;
 public class Player extends GameEntity {
 	
 	private int numArrows;
-	private Game game;
-
+	
 	public Player (Game game, int yPos, int xPos) {
-		this(game, 5, yPos, xPos);
+		this(5, game, yPos, xPos);
 	}
 	
-	public Player (Game game, int numArrows, int yPos, int xPos) {
-		super(yPos, xPos);
-		this.game = game;
+	public Player (int numArrows, Game game,  int yPos, int xPos) {
+		super(game, yPos, xPos);
 		this.numArrows = 5;
 	}
 	
@@ -24,6 +22,11 @@ public class Player extends GameEntity {
 	
 	public void pickUpArrows (int numArrows) {
 		this.numArrows += numArrows;
+	}
+	
+	public void move (char direction) {
+		super.move(direction);
+		game.afterPlayerMove();
 	}
 
 	public void shoot (char direction) {

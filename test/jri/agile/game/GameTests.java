@@ -87,22 +87,22 @@ public class GameTests {
 		assertEquals(0, position.getXPos());
 		assertEquals(0, position.getYPos());
 		
-		game.movePlayer('E');
+		player.move('E');
 		
 		assertEquals(1, position.getXPos());
 		assertEquals(0, position.getYPos());
 		
-		game.movePlayer('S');
+		player.move('S');
 		
 		assertEquals(1, position.getXPos());
 		assertEquals(1, position.getYPos());
 		
-		game.movePlayer('W');
+		player.move('W');
 		
 		assertEquals(0, position.getXPos());
 		assertEquals(1, position.getYPos());
 		
-		game.movePlayer('N');
+		player.move('N');
 		
 		assertEquals(0, position.getXPos());
 		assertEquals(0, position.getYPos());
@@ -110,32 +110,33 @@ public class GameTests {
 	
 	@Test
 	public void playerCannotMoveIfAtEdge () {
+		Player player = game.getPlayer();
 		BoardPosition position = game.getPlayer().getCurrentPosition();
 		
-		game.movePlayer('W');
+		player.move('W');
 		
 		assertEquals(0, position.getXPos());
 		assertEquals(0, position.getYPos());
 		
-		game.movePlayer('N');
+		player.move('N');
 		
 		assertEquals(0, position.getXPos());
 		assertEquals(0, position.getYPos());
 		
-		game.movePlayer('S');
-		game.movePlayer('S');
-		game.movePlayer('S');
-		game.movePlayer('S');
-		game.movePlayer('S');
+		player.move('S');
+		player.move('S');
+		player.move('S');
+		player.move('S');
+		player.move('S');
 		
 		assertEquals(0, position.getXPos());
 		assertEquals(4, position.getYPos());
 		
-		game.movePlayer('E');
-		game.movePlayer('E');
-		game.movePlayer('E');
-		game.movePlayer('E');
-		game.movePlayer('E');
+		player.move('E');
+		player.move('E');
+		player.move('E');
+		player.move('E');
+		player.move('E');
 		
 		assertEquals(4, position.getXPos());
 		assertEquals(4, position.getYPos());
@@ -160,23 +161,23 @@ public class GameTests {
 		assertEquals(4, position.getYPos());
 		
 		
-		game.moveRick('N');
+		rick.move('N');
 		
 		assertEquals(4, position.getXPos());
 		assertEquals(3, position.getYPos());
 		
 		
-		game.moveRick('W');
+		rick.move('W');
 		
 		assertEquals(3, position.getXPos());
 		assertEquals(3, position.getYPos());
 		
-		game.moveRick('S');
+		rick.move('S');
 		
 		assertEquals(3, position.getXPos());
 		assertEquals(4, position.getYPos());
 		
-		game.moveRick('E');
+		rick.move('E');
 		
 		assertEquals(4, position.getXPos());
 		assertEquals(4, position.getYPos());
@@ -197,7 +198,7 @@ public class GameTests {
 			position.setXPos(1);
 			position.setYPos(1);
 			
-			game.moveRickRandom();
+			rick.moveRandom();
 			
 			if (position.getYPos() == 0) {
 				movedNorth++;
@@ -224,19 +225,20 @@ public class GameTests {
 	@Test
 	public void checkRickAndPlayerInRoom () {
 		Game game = buildEmptyMap(5, 5);
+		Player player = game.getPlayer();
 		game.getRick().freeze();
 		
-		game.movePlayer('S');
-		game.movePlayer('S');
-		game.movePlayer('S');
-		game.movePlayer('S');
+		player.move('S');
+		player.move('S');
+		player.move('S');
+		player.move('S');
 		
 		assertTrue(!game.isPlayerInRoomWithRick());
 		
-		game.movePlayer('E');
-		game.movePlayer('E');
-		game.movePlayer('E');
-		game.movePlayer('E');
+		player.move('E');
+		player.move('E');
+		player.move('E');
+		player.move('E');
 		
 		assertTrue(game.isPlayerInRoomWithRick());
 	}
@@ -248,17 +250,17 @@ public class GameTests {
 		GameEntity player = game.getPlayer();
 		game.getRick().freeze();
 		
-		game.movePlayer('S');
-		game.movePlayer('S');
-		game.movePlayer('S');
-		game.movePlayer('S');
+		player.move('S');
+		player.move('S');
+		player.move('S');
+		player.move('S');
 		
 		assertTrue(player.isAlive());
 		
-		game.movePlayer('E');
-		game.movePlayer('E');
-		game.movePlayer('E');
-		game.movePlayer('E');
+		player.move('E');
+		player.move('E');
+		player.move('E');
+		player.move('E');
 		
 		assertTrue(!player.isAlive());
 	}
@@ -299,7 +301,7 @@ public class GameTests {
 		
 		game.setRoom(row, col, pitRoom);
 		
-		game.movePlayer('E');
+		player.move('E');
 		
 		assertTrue(!game.getPlayer().isAlive());
 	}
@@ -402,12 +404,15 @@ public class GameTests {
 	public void batsCanMovePlayer () {
 		int timesPlayerMoved = 0;
 		Game game;
+		Player player;
 				
 		for (int i = 0; i < 100; i++) {
 			game = new Game(5, 5);
+			player = game.getPlayer();
+			
 			BoardPosition playerPos = game.getPlayer().getCurrentPosition();
 			game.setRoom(0, 1, new Room(0, 1, Room.RoomType.BatRoom));
-			game.movePlayer('E');
+			player.move('E');
 			
 			if (playerPos.getXPos() != 1 || playerPos.getYPos() != 1) {
 				timesPlayerMoved++;
@@ -467,8 +472,8 @@ public class GameTests {
 		
 		Player player = game.getPlayer();
 		
-		game.movePlayer('E');
-		game.movePlayer('E');
+		player.move('E');
+		player.move('E');
 		
 		int numArrowsInLastRoomAfterShoot = game.getRoom(0, 0).getNumArrows();
 		
@@ -502,8 +507,8 @@ public class GameTests {
 		
 		Player player = game.getPlayer();
 		
-		game.movePlayer('S');
-		game.movePlayer('S');
+		player.move('S');
+		player.move('S');
 		
 		int numArrowsInLastRoomAfterShoot = game.getRoom(0, 0).getNumArrows();
 		
@@ -523,10 +528,10 @@ public class GameTests {
 		game.getRick().freeze();
 		
 		
-		game.movePlayer('S');
-		game.movePlayer('S');
-		game.movePlayer('S');
-		game.movePlayer('S');
+		player.move('S');
+		player.move('S');
+		player.move('S');
+		player.move('S');
 		
 		player.shoot('E');
 		
@@ -541,7 +546,7 @@ public class GameTests {
 		
 		Player player = game.getPlayer();
 		
-		game.movePlayer('E');
+		player.move('E');
 		
 		assertEquals(5, player.getNumArrows());
 		
@@ -549,7 +554,7 @@ public class GameTests {
 		
 		assertEquals(4, player.getNumArrows());
 		
-		game.movePlayer('W');
+		player.move('W');
 		
 		assertEquals(5, player.getNumArrows());
 	}
@@ -592,23 +597,23 @@ public class GameTests {
 		LinkedList<String> log = player.getActionLog();
 		String lastLogItem;
 		
-		game.movePlayer('E');
-		game.movePlayer('E');
-		game.movePlayer('E');
+		player.move('E');
+		player.move('E');
+		player.move('E');
 		
 		lastLogItem = log.getLast();
 		
 		assertEquals("You hear the flapping of wings nearby.", lastLogItem);
 		
-		game.movePlayer('S');
-		game.movePlayer('S');
+		player.move('S');
+		player.move('S');
 		
 		lastLogItem = log.getLast();
 		
 		assertEquals("You feel a cool breeze nearby.", lastLogItem);
 		
-		game.movePlayer('E');
-		game.movePlayer('S');
+		player.move('E');
+		player.move('S');
 		
 		lastLogItem = log.getLast();
 		

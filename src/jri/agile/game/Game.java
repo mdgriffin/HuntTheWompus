@@ -1,5 +1,10 @@
 package jri.agile.game;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 public class Game {
 	
 	private Room[][] gameBoard;
@@ -13,7 +18,7 @@ public class Game {
 		this.width = width;
 		
 		this.player = new Player(this, 0, 0);
-		this.rick = new Rick(height - 1, width - 1);
+		this.rick = new Rick(this, height - 1, width - 1);
 		
 		generateBoard();
 	}
@@ -96,24 +101,29 @@ public class Game {
 		return rick;
 	}
 	
-	public void movePlayer (char direction) {
-		moveEntity (player, direction);
-		
-		afterPlayerMove();
-	}
-	
-	private void afterPlayerMove () {
+	public void afterPlayerMove () {
 		BoardPosition playerPos = getPlayer().getCurrentPosition();
 		Room currentRoom  = getRoom(playerPos.getYPos(), playerPos.getXPos());
 		
 		if (isPlayerInRoomWithRick()) {
 			player.die();
 			player.actionLog.addLast("You were killed by Rick");
+			
+			// throws IOException, URISyntaxException
+			/*
+			try {
+				Desktop d = Desktop.getDesktop();
+				d.browse(new URI("https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+			} catch (Exception exc) {
+				
+			}
+			*/
+			
 		} else if (isPlayerInRoomWithPit()) {
 			player.die();
 			player.actionLog.addLast("You fell into the Pit");
 		} else if (isPlayerInRoomWithBats()) {
-			movePlayerRandom();
+			player.moveRandom();
 			player.actionLog.addLast("You were moved to a random position by bats");
 			afterPlayerMove();
 		} else {
@@ -127,14 +137,15 @@ public class Game {
 			}
 		}
 		
-		moveRickRandom();
+		rick.moveRandom();
 		
 	}
 	
 	public void afterPlayerShoot () {
-		moveRickRandom();
+		rick.moveRandom();
 	}
 	
+	/*
 	public void movePlayerRandom () {
 		int randX = (int)(Math.random() * width);
 		int randY = (int)(Math.random() * height);
@@ -142,13 +153,17 @@ public class Game {
 		player.getCurrentPosition().setXPos(randX);
 		player.getCurrentPosition().setYPos(randY);
 	}
+	*/
 	
+	/*
 	public void moveRick (char direction) {
 		if (!rick.isFrozen()) {
 			moveEntity (rick, direction);
 		}
 	}
+	*/
 	
+	/*
 	public void moveRickRandom () {
 		if (!rick.isFrozen()) {
 			int random = (int)(Math.random() * 5);
@@ -175,7 +190,9 @@ public class Game {
 			moveRick(direction);
 		}
 	}
+	*/
 	
+	/*
 	private void moveEntity (GameEntity entity, char direction) {
 		BoardPosition position = entity.getCurrentPosition();
 		
@@ -189,6 +206,7 @@ public class Game {
 			position.setYPos(position.getYPos() - 1);
 		}
 	}
+	*/
 	
 	public boolean isPlayerInRoomWithRick () {
 		return player.getCurrentPosition().equals(rick.getCurrentPosition());

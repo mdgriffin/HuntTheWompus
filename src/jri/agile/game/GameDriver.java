@@ -28,6 +28,7 @@ public class GameDriver {
 	
 	private static void playGame () {
 		Game game = new Game(5, 5);
+		Player player = game.getPlayer();
 		String userInput;
 		char command = ' ';
 		
@@ -50,7 +51,7 @@ public class GameDriver {
 					System.out.println("Invalid command please enter again");
 				} else {
 					char direction = moveDirection[1].charAt(0);
-					game.movePlayer(direction);
+					player.move(direction);
 				}
 				
 				System.out.println(game.toString());
@@ -62,7 +63,7 @@ public class GameDriver {
 					System.out.println("Invalid command please enter again");
 				} else {
 					char direction = shootDirection[1].charAt(0);
-					game.getPlayer().shoot(direction);
+					player.shoot(direction);
 				}
 				
 				System.out.println(game.toString());
