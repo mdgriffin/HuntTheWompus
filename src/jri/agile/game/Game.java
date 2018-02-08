@@ -108,20 +108,20 @@ public class Game {
 		
 		if (isPlayerInRoomWithRick()) {
 			player.die();
-			player.actionLog.push("You were killed by Rick");
+			player.actionLog.addLast("You were killed by Rick");
 		} else if (isPlayerInRoomWithPit()) {
 			player.die();
-			player.actionLog.push("You fell into the Pit");
+			player.actionLog.addLast("You fell into the Pit");
 		} else if (isPlayerInRoomWithBats()) {
 			movePlayerRandom();
-			player.actionLog.push("You were moved to a random position by bats");
+			player.actionLog.addLast("You were moved to a random position by bats");
 			afterPlayerMove();
 		} else {
-			player.actionLog.push("You moved to a new room");
+			player.actionLog.addLast("You moved to a new room");
 			player.sense();
 			
 			if (currentRoom.getNumArrows() > 0) {
-				player.actionLog.push("You picked up " + currentRoom.getNumArrows() + " arrow(s)");
+				player.actionLog.addLast("You picked up " + currentRoom.getNumArrows() + " arrow(s)");
 				player.pickUpArrows(currentRoom.getNumArrows());
 				currentRoom.removeArrows();
 			}

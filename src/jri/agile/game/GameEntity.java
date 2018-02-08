@@ -14,6 +14,10 @@ public class GameEntity {
 		
 		actionLog = new LinkedList<>();
 	}
+	
+	public LinkedList<String> getActionLog () {
+		return actionLog;
+	}
 
 	public BoardPosition getCurrentPosition () {
 		return position;
