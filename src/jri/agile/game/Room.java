@@ -4,6 +4,7 @@ public class Room {
 
 	private int row;
 	private int col;
+	private BoardPosition roomPosition;
 	private boolean hasBats = false;
 	private boolean hasPit = false;
 	private int numArrows = 0;
@@ -15,6 +16,8 @@ public class Room {
 	public Room (int row, int col, RoomType roomType) {
 		this.row = row;
 		this.col = col;
+		
+		roomPosition = new BoardPosition(row, col);
 		
 		switch (roomType) {
 			case BatRoom:
@@ -35,6 +38,10 @@ public class Room {
 	
 	public int getColumn () {
 		return col;
+	}
+	
+	public BoardPosition getPosition () {
+		return roomPosition;
 	}
 	
 	public int getNumArrows () {

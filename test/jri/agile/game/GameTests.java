@@ -563,4 +563,10 @@ public class GameTests {
 	}
 	*/
 	
+	@Test
+	public void playerCanSense () {
+		
+		
+	}
+	
 }

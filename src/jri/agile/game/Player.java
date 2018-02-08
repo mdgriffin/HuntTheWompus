@@ -1,6 +1,7 @@
 package jri.agile.game;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Player extends GameEntity {
 	
@@ -101,6 +102,39 @@ public class Player extends GameEntity {
 		// if pit = "Feel a cool breeze nearby"
 		
 		ArrayList<Room> adjacentRooms = new ArrayList<>();
+		
+		BoardPosition pos = getCurrentPosition();
+		BoardPosition rickPos = game.getRick().getCurrentPosition();
+		
+		if (pos.getYPos() > 0) {
+			adjacentRooms.add(game.getRoom(pos.getYPos() - 1, pos.getXPos()));
+		}
+		
+		if (pos.getYPos() < game.getHeight()) {
+			adjacentRooms.add(game.getRoom(pos.getYPos() + 1, pos.getXPos()));
+		}
+		
+		if (pos.getXPos() > 0) {
+			adjacentRooms.add(game.getRoom(pos.getYPos(), pos.getXPos() - 1));
+		}
+		
+		if (pos.getXPos() < game.getWidth()) {
+			adjacentRooms.add(game.getRoom(pos.getYPos(), pos.getXPos() + 1));
+		}
+		
+		Iterator<Room> roomIterator = adjacentRooms.iterator();
+		
+		while (roomIterator.hasNext()) {
+			Room room = roomIterator.next();
+			
+			if (room.hasBats()) {
+				actionLog.push("You hear the flapping of wings nearby.");
+			} else if (room.hasPit()) {
+				actionLog.push("You feel a cool breeze nearby.");
+			} else if (rickPos.equals(room.getPosition())) {
+				actionLog.push("You hear something near by, \"....give.....up\"");
+			}
+		}
 	}
 	
 	public String toString () {
