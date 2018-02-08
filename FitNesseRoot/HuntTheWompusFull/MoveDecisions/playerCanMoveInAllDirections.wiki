@@ -9,11 +9,11 @@ Test
 |jri.agile.fixtures|
 !| GameContext|
 
-!| AreEntitiesInCorrectStartPosition           |
-|numRows|numColumns|getRickYPos?| getRickXPos? |
-|5         |5      |4           | 4            |
-|6         |6      |5           | 5            |
-|7         |7      |6           | 6            |
-|8         |8      |7           | 7            |
-|9         |9      |8           | 8            |
-|10        |10     |9           | 9            |
+!| AreEntitiesInCorrectStartPosition                                             |
+|numRows|numColumns|getRickYPos?| getRickXPos? | getPlayerXPos? | getPlayerYPos? |
+|5         |5      |4           | 4            | 0              | 0              |
+|6         |6      |5           | 5            | 0              | 0              |
+|7         |7      |6           | 6            | 0              | 0              |
+|8         |8      |7           | 7            | 0              | 0              |
+|9         |9      |8           | 8            | 0              | 0              |
+|10        |10     |9           | 9            | 0              | 0              |
