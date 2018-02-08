@@ -48,7 +48,6 @@ public class GameTests {
 		game.setRoom(0, 4, new Room (0, 4, Room.RoomType.BatRoom));
 		game.setRoom(4, 0, new Room (4, 0, Room.RoomType.BatRoom));
 		game.setRoom(2, 2, new Room (2, 2, Room.RoomType.PitRoom));
-		game.setRoom(3, 3, new Room (3, 3, Room.RoomType.PitRoom));
 		
 		return game;
 	}
