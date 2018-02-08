@@ -58,7 +58,7 @@ public class GameTests {
 	
 	@Test
 	public void playerCanMove () {
-		// ToDo: Create a clear board
+		Game game = buildEmptyMap(5, 5);
 		GameEntity player = game.getPlayer();
 		
 		BoardPosition position = player.getCurrentPosition();
@@ -202,6 +202,9 @@ public class GameTests {
 	
 	@Test
 	public void checkRickAndPlayerInRoom () {
+		Game game = buildEmptyMap(5, 5);
+		game.getRick().freeze();
+		
 		game.movePlayer('S');
 		game.movePlayer('S');
 		game.movePlayer('S');
@@ -220,7 +223,9 @@ public class GameTests {
 	
 	@Test
 	public void playerCanDie () {
+		Game game = buildEmptyMap(5, 5);
 		GameEntity player = game.getPlayer();
+		game.getRick().freeze();
 		
 		game.movePlayer('S');
 		game.movePlayer('S');
@@ -493,8 +498,9 @@ public class GameTests {
 	@Test
 	public void playerCanKillRick () {
 		Game game = buildEmptyMap(5, 5);
-		
 		Player player = game.getPlayer();
+		game.getRick().freeze();
+		
 		
 		game.movePlayer('S');
 		game.movePlayer('S');
@@ -527,5 +533,34 @@ public class GameTests {
 		assertEquals(5, player.getNumArrows());
 	}
 	
+	/*
+	@Test
+	public void rickMovesAfterPlayerShoot () {
+		int numTimesRickMove = 0;
+		game.setPlayer(new Player(game, 1000, 0, 0));
+		Player player = game.getPlayer();
+		BoardPosition currentRickPosition;
+		BoardPosition lastRickPosition;
+		
+		for (int i = 0; i < 100; i++) {
+			
+			currentRickPosition = game.getRick().getCurrentPosition();
+			
+			player.shoot('S');
+			
+			lastRickPosition = game.getRick().getCurrentPosition();
+			
+			if (!lastRickPosition.equals(game.getRick().getCurrentPosition())) {
+				numTimesRickMove++;
+			}
+			
+			System.out.println(lastRickPosition + " " + game.getRick().getCurrentPosition());
+		}
+		
+		System.out.println("Num times rick move: " + numTimesRickMove);
+		
+		assertTrue(numTimesRickMove > 75);
+	}
+	*/
 	
 }

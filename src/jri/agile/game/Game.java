@@ -6,7 +6,7 @@ public class Game {
 	private int width;
 	private int height;
 	private Player player;
-	private GameEntity rick;
+	private Rick rick;
 	
 	public Game (int height, int width) {
 		this.height = height;
@@ -88,7 +88,11 @@ public class Game {
 		return player;
 	}
 	
-	public GameEntity getRick () {
+	public void setPlayer(Player player) {
+		this.player = player;
+	}
+	
+	public Rick getRick () {
 		return rick;
 	}
 	
@@ -138,33 +142,36 @@ public class Game {
 	}
 	
 	public void moveRick (char direction) {
-		moveEntity (rick, direction);
+		if (!rick.isFrozen()) {
+			moveEntity (rick, direction);
+		}
 	}
 	
 	public void moveRickRandom () {
-		int random = (int)(Math.random() * 5);
-		char direction;
-		
-		switch(random) {
-			case 0:
-				direction = 'N';
-				break;
-			case 1:
-				direction = 'E';
-				break;
-			case 2:
-				direction = 'S';
-				break;
-			case 3:
-				direction = 'W';
-				break;
-			default:
-				direction = 'R';
-				break;
+		if (!rick.isFrozen()) {
+			int random = (int)(Math.random() * 5);
+			char direction;
+			
+			switch(random) {
+				case 0:
+					direction = 'N';
+					break;
+				case 1:
+					direction = 'E';
+					break;
+				case 2:
+					direction = 'S';
+					break;
+				case 3:
+					direction = 'W';
+					break;
+				default:
+					direction = 'R';
+					break;
+			}
+			
+			moveRick(direction);
 		}
-		
-		moveRick(direction);
-		
 	}
 	
 	private void moveEntity (GameEntity entity, char direction) {

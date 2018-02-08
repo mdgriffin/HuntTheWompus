@@ -1,9 +1,9 @@
 package jri.agile.game;
 
 public class BoardPosition {
-	private int xPos;
 	private int yPos;
-	
+	private int xPos;
+		
 	public BoardPosition (int yPos, int xPos) {
 		this.yPos = yPos;
 		this.xPos = xPos;
@@ -12,7 +12,6 @@ public class BoardPosition {
 	public int getXPos () {
 		return xPos;
 	}
-	
 	
 	public int getYPos() {
 		return yPos;
@@ -35,10 +34,8 @@ public class BoardPosition {
 	        return false;
 	    }
 	    final BoardPosition otherPosition = (BoardPosition) obj;
-
-	    if (xPos != otherPosition.getXPos()) {
-	    	return false;
-	    } else if (yPos != otherPosition.getYPos()) {
+	    
+	    if (xPos != otherPosition.getXPos() || yPos != otherPosition.getYPos()) {
 	    	return false;
 	    }
 	    
@@ -50,5 +47,10 @@ public class BoardPosition {
 	    int hash = 3;
 	    hash = 53 * hash + this.xPos + this.yPos;
 	    return hash;
+	}
+	
+	@Override
+	public String toString () {
+		return xPos + "," + yPos;
 	}
 }

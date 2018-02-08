@@ -8,6 +8,10 @@ public class Player extends GameEntity {
 	private Game game;
 
 	public Player (Game game, int yPos, int xPos) {
+		this(game, 5, yPos, xPos);
+	}
+	
+	public Player (Game game, int numArrows, int yPos, int xPos) {
 		super(yPos, xPos);
 		this.game = game;
 		this.numArrows = 5;
@@ -80,10 +84,12 @@ public class Player extends GameEntity {
 				actionLog.push("You took an arrow to the knee!");
 			}
 			
-			game.afterPlayerShoot();
+			
 		} else {
 			actionLog.push("Oh, no arrows left");
 		}
+		
+		game.afterPlayerShoot();
 	}
 	
 	public void sense () {
