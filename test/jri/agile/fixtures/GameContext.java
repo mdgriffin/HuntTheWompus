@@ -1,4 +1,6 @@
-package jri.agile.game;
+package jri.agile.fixtures;
+
+import jri.agile.game.Game;
 
 public class GameContext {
 	

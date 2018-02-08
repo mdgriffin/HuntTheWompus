@@ -1,7 +1,15 @@
-package jri.agile.game;
+package jri.agile.fixtures;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+import jri.agile.game.BoardPosition;
+import jri.agile.game.Game;
+import jri.agile.game.GameEntity;
+import jri.agile.game.Player;
+import jri.agile.game.Rick;
+import jri.agile.game.Room;
+import jri.agile.game.Room.RoomType;
 
 public class GameFixture {
 	
