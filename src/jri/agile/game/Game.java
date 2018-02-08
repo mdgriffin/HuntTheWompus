@@ -125,6 +125,10 @@ public class Game {
 		moveRickRandom();
 	}
 	
+	public void afterPlayerShoot () {
+		moveRickRandom();
+	}
+	
 	public void movePlayerRandom () {
 		int randX = (int)(Math.random() * width);
 		int randY = (int)(Math.random() * height);

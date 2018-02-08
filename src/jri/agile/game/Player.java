@@ -79,6 +79,8 @@ public class Player extends GameEntity {
 				die();
 				actionLog.push("You took an arrow to the knee!");
 			}
+			
+			game.afterPlayerShoot();
 		} else {
 			actionLog.push("Oh, no arrows left");
 		}
