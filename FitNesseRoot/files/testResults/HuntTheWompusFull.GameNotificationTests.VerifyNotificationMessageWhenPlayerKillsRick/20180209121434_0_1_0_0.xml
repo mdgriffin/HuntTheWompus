@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20180127</FitNesseVersion>
+  <rootPath>HuntTheWompusFull.GameNotificationTests.VerifyNotificationMessageWhenPlayerKillsRick</rootPath>
+    <result>
+    <counts>
+      <right>0</right>
+      <wrong>1</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <date>2018-02-09T12:14:34+00:00</date>
+    <runTimeInMillis>101</runTimeInMillis>
+    <content>&lt;br/&gt;&amp;lt;test page&amp;gt;&lt;br/&gt;&lt;br/&gt;&amp;lt;test page&amp;gt;&lt;br/&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;classpath: bin&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;jri.agile.fixtures&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;GameContext&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;h3 id="VerifyNotificationmessagewhenplayerkillsRick"&gt;Verify Notification message when player kills Rick&lt;/h3&gt;
+&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;script&lt;/td&gt;
+		&lt;td colspan="2"&gt;&lt;span class="pass"&gt;NotificationMessages&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;check&lt;/td&gt;
+		&lt;td&gt;whenPlayerKillsRick&lt;/td&gt;
+		&lt;td&gt;[&lt;span class="diff"&gt;"&lt;/span&gt;&amp;gt;&amp;gt;-Whoosh---&amp;gt;&lt;span class="diff"&gt;"&lt;/span&gt; You killed Rick!] &lt;span class="fail"&gt;expected [&amp;gt;&amp;gt;-Whoosh---&amp;gt; You killed Rick!]&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</content>
+    <relativePageName>VerifyNotificationMessageWhenPlayerKillsRick</relativePageName>
+            <instructions>
+            <instructionResult>
+        <instruction>{id='import_0_0', instruction='import', path='jri.agile.fixtures'}</instruction>
+        <slimResult>pass(jri.agile.fixtures)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_0_0</instructionId>
+                    <col>0</col>
+                              <row>1</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>jri.agile.fixtures</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_0', instruction='make', instanceName='decisionTable_1', className='GameContext', args=[]}</instruction>
+        <slimResult>pass(GameContext)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>decisionTable_1_0</instructionId>
+                    <col>0</col>
+                              <row>0</row>
+                    <type>ConstructionExpectation</type>
+                                        <evaluationMessage>GameContext</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_2_0', instruction='make', instanceName='scriptTableActor', className='NotificationMessages', args=[]}</instruction>
+        <slimResult>pass(NotificationMessages)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>scriptTable_2_0</instructionId>
+                    <col>1</col>
+                              <row>0</row>
+                    <type>ConstructionExpectation</type>
+                                        <evaluationMessage>NotificationMessages</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_2_1', instruction='call', instanceName='scriptTableActor', methodName='whenPlayerKillsRick', args=[]}</instruction>
+        <slimResult>fail(a="&gt;&gt;-Whoosh---&gt;" You killed Rick!;e=&gt;&gt;-Whoosh---&gt; You killed Rick!)</slimResult>
+                <expectation>
+                    <status>fail</status>
+                    <instructionId>scriptTable_2_1</instructionId>
+                    <col>2</col>
+                              <row>1</row>
+                    <type>ReturnedValueExpectation</type>
+                    <actual>"&gt;&gt;-Whoosh---&gt;" You killed Rick!</actual>
+                              <expected>&gt;&gt;-Whoosh---&gt; You killed Rick!</expected>
+                            </expectation>
+              </instructionResult>
+          </instructions>
+      </result>
+  <executionLog>
+    <testSystem>slim:fitnesse.slim.SlimService</testSystem>
+    <command>java -cp C:\Users\mdgri\eclipse-workspace\HuntTheWombus\HuntTheWompus\fitnesse-standalone.jar;bin fitnesse.slim.SlimService 1</command>
+    <exitCode>0</exitCode>
+    <stdOut></stdOut>
+    <stdErr></stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>0</right>
+    <wrong>1</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>422</totalRunTimeInMillis>
+</testResults>
+

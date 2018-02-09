@@ -131,7 +131,7 @@ public class Player extends GameEntity {
 			} else if (room.hasPit()) {
 				actionLog.addLast(GameText.sensePit);
 			} else if (rickPos.equals(room.getPosition())) {
-				actionLog.addLast(GameText.rickText1);
+				actionLog.addLast(GameText.rickText);
 			}
 		}
 	}

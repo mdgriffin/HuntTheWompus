@@ -15,11 +15,11 @@ public class GameText {
 	public static final String playerResting = "Resting";
 	public static final String pickedUpArrows = "You picked up %d arrow(s)";
 	public static final String arrowShoot = "\">>-Whoosh--->\"";
-	public static final String playAgain = "\nEnter (Y)es to play another game: ";
-	public static final String goodbye = "\n\nGoodbye, thanks for playing";
-	public static final String pointer = "\n> ";
+	public static final String playAgain = "Enter (Y)es to play another game:";
+	public static final String goodbye = "Goodbye, thanks for playing";
+	public static final String pointer = "> ";
 	public static final String invalidCommand = "\nInvalid command please enter again";
-	public static final String rickText1 = "You hear something near by, \"....give.....up\"";
+	public static final String rickText = "You hear something near by, \"....give.....up\"";
 	public static final String rickText2 = "You hear something near by, \".....let...down\"";
 	public static final String rickText3 = "You hear something near by, \"....run........\"";
 	public static final String rickText4 = "You hear something near by, \".......Hurt You\"";

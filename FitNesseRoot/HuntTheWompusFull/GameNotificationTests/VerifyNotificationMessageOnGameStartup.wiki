@@ -14,4 +14,4 @@ Test
 
 !3 Verify Notification message on game startup
 !| script|NotificationMessages                                                                                                                                                                                                                     |
-|check   |whenGameStarts|Welcome to Hunt the Wombus To Move enter (M)ove followed by the direction (N, S, E, W) To Shoot enter (S)hoot followed by the direction (N, S, E, W) To see these options again, type (H)elp To quit the game enter (Q)uit|
+|check   |whenGameStarts|To Move enter (M)ove followed by the direction (N, S, E, W)To Shoot enter (S)hoot followed by the direction (N, S, E, W)To see these options again, type (H)elpTo quit the game enter (Q)uit|

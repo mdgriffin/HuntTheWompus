@@ -14,4 +14,4 @@ Test
 
 !3 Verify Notification message when player kills Rick
 !| script|NotificationMessages                |
-|check   |whenPlayerKillsRick|>>-Whoosh---> You killed Rick!|
+|check   |whenPlayerKillsRick|">>-Whoosh--->" You killed Rick!|

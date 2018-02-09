@@ -14,5 +14,5 @@ Test
 
 !3 Verify that when Player shoots arrow into same room, player dies
 !| script|NotificationMessages                |
-|check   |whenRickIsInNextRoom|You hear something near by, \"....give.....up\|
+|check   |whenRickIsInNextRoom|You hear something near by, "....give.....up"|
 |check   |whenRickKillsPlayer|You were killed by Rick!|

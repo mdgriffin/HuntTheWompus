@@ -12,5 +12,5 @@ Test
 
 !3 Verify Notification message when player kills Rick
 !| script|NotificationMessages                                      |
-|check   |PlayeAgainMessageAppears|Enter (Y)es to play another game:|
+|check   |PlayAgainMessageAppears|Enter (Y)es to play another game:|
 |check   |PlayerEndsGame          |Goodbye, thanks for playing      |
