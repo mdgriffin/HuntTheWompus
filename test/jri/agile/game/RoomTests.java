@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class RoomTests {
-
+	
 	@Test
 	public void canCreateRoom() {
 		Room room = new Room(0, 0, Room.RoomType.Normal);
