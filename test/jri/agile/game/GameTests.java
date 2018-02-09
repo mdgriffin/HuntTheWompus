@@ -106,6 +106,7 @@ public class GameTests {
 	
 	@Test
 	public void playerCannotMoveIfAtEdge () {
+		Game game = buildEmptyMap(5, 5);
 		Player player = game.getPlayer();
 		BoardPosition position = game.getPlayer().getCurrentPosition();
 		
@@ -149,6 +150,8 @@ public class GameTests {
 	
 	@Test
 	public void canMoveRick () {
+		Game game = buildEmptyMap(5, 5);
+		
 		GameEntity rick = game.getRick();
 		
 		BoardPosition position = rick.getCurrentPosition();
@@ -161,7 +164,6 @@ public class GameTests {
 		
 		assertEquals(4, position.getXPos());
 		assertEquals(3, position.getYPos());
-		
 		
 		rick.move('W');
 		
@@ -181,7 +183,7 @@ public class GameTests {
 	
 	@Test
 	public void rickMovesRandomly () {
-		Game game = new Game(3, 3);
+		Game game = buildEmptyMap(3, 3);
 		GameEntity rick = game.getRick();
 		BoardPosition position = rick.getCurrentPosition();
 		int movedNorth = 0;
@@ -233,6 +235,8 @@ public class GameTests {
 		player.move('E');
 		
 		assertTrue(game.isPlayerInRoomWithRick());
+		
+		assertTrue(!player.isAlive());
 	}
 	
 	
@@ -280,6 +284,7 @@ public class GameTests {
 	
 	@Test
 	public void playerCanDieInPit () {
+		Game game = buildEmptyMap(5, 5);
 		int row = 0;
 		int col = 1;
 		GameEntity player = game.getPlayer();
@@ -317,7 +322,7 @@ public class GameTests {
 	}
 	
 	@Test
-	public void gameHasTwoBats () {
+	public void gameHasTwoBatRooms () {
 		int width = 5;
 		int height = 5;
 		Game game  = new Game(height, width);
@@ -429,6 +434,7 @@ public class GameTests {
 		
 		int numArrowsAfterShooting = game.getPlayer().getNumArrows();
 		
+		assertTrue(numArrows == numArrowsAfterShooting - 1);
 		assertTrue(numArrows > numArrowsAfterShooting);
 	}
 	
