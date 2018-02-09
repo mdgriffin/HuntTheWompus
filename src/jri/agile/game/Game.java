@@ -100,7 +100,7 @@ public class Game {
 		
 		if (isPlayerInRoomWithRick()) {
 			player.die();
-			player.actionLog.addLast("You were killed by Rick!");
+			player.actionLog.addLast(GameText.killedByRick);
 			
 			// throws IOException, URISyntaxException
 			/*
@@ -114,22 +114,22 @@ public class Game {
 			
 		} else if (isPlayerInRoomWithPit()) {
 			player.die();
-			player.actionLog.addLast("You fell into the Pit");
+			player.actionLog.addLast(GameText.killedByPit);
 		} else if (isPlayerInRoomWithBats()) {
 			player.moveRandom();
-			player.actionLog.addLast("Ah, bats have moved caught you and are dragging you to a different room!");
+			player.actionLog.addLast(GameText.movedByBats);
 			afterPlayerMove(true);
 		} else {
 			if (playerDidMove) {
-				player.actionLog.addLast("You moved to a new room");
+				player.actionLog.addLast(GameText.movedToNewRoom);
 			} else {
-				player.actionLog.addLast("Have not moved..");
+				player.actionLog.addLast(GameText.notMoved);
 			}
 			
 			player.sense();
 			
 			if (currentRoom.getNumArrows() > 0) {
-				player.actionLog.addLast("You picked up " + currentRoom.getNumArrows() + " arrow(s)");
+				player.actionLog.addLast(String.format(GameText.pickedUpArrows,  currentRoom.getNumArrows()));
 				player.pickUpArrows(currentRoom.getNumArrows());
 				currentRoom.removeArrows();
 			}
