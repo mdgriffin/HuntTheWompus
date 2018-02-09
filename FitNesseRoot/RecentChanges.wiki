@@ -1,3 +1,5 @@
+|FrontPage||08:51:41 Fri, Feb 09, 2018|
+|UserGuides||08:50:04 Fri, Feb 09, 2018|
 |HuntTheWompusFull.MoveDecisions.playerCanMoveInAllDirections||16:21:27 Thu, Feb 08, 2018|
 |HuntTheWompusFull.MoveDecisions||15:59:43 Thu, Feb 08, 2018|
 |HuntTheWompusFull.WumbusTests.VerifyThatWumpusGeneratesAtStartPositionOnBottomCornerOfMap||15:42:17 Thu, Feb 08, 2018|
@@ -7,7 +9,6 @@
 |HuntTheWompusFull.PlayerTests.VerifyThatPlayerCannotMoveOffTheBoard||15:36:37 Thu, Feb 08, 2018|
 |HuntTheWompusFull.PlayerTests.VerifyThatPlayerCanMoveFromWestToEastAndNorthToSouthInOneMovementAndReturnToOriginalPosition||15:30:25 Thu, Feb 08, 2018|
 |HuntTheWompusFull.PlayerTests.VerifyPlayerGeneratesAtStartPositionOnTheMap||15:30:15 Thu, Feb 08, 2018|
-|FrontPage||15:29:56 Thu, Feb 08, 2018|
 |HuntTheWompusFull.MapTests.VerifyThatMapGeneratesWithAPitRoom||15:29:14 Thu, Feb 08, 2018|
 |HuntTheWompusFull.MapTests.VerifyThatMapGeneratesWithANormalRoom||15:29:03 Thu, Feb 08, 2018|
 |HuntTheWompusFull.MapTests.VerifyThatMapGeneratesWithABatRoom||15:28:51 Thu, Feb 08, 2018|

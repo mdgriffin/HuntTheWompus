@@ -29,11 +29,7 @@ public class Game {
 	
 	private void generateBoard () {
 		gameBoard = new Room[height][width];
-		int numPits = 0;
-		int numBats = 0;
 		int roomNumLogic = (int) ((height*width)*.08);
-		BoardPosition rickPos = rick.getCurrentPosition();
-		BoardPosition playerPos = player.getCurrentPosition();
 		
 		for (int row = 0; row < height; row++) {
 			for (int col = 0; col < width; col++) {
@@ -41,28 +37,23 @@ public class Game {
 			}
 		}
 		
-		while (numPits < roomNumLogic ) {
-			int randX = (int)(Math.random() * width);
-			int randY = (int)(Math.random() * height);
-			
-			if ((playerPos.getXPos() != randX && playerPos.getYPos() != randY) 
-				&& (rickPos.getXPos() != randX && rickPos.getYPos() != randY)
-				&& (!getRoom(randY, randX).hasPit())) {
-				setRoom(randY, randX, new Room(randY, randX, Room.RoomType.PitRoom));
-				numPits++;
-			}
-		}
+		generateRandomRooms(roomNumLogic, Room.RoomType.BatRoom);
+		generateRandomRooms(roomNumLogic, Room.RoomType.PitRoom);
+	}
+	
+	private void generateRandomRooms (int numRoomsToGenerate, Room.RoomType roomType) {
+		BoardPosition rickPos = rick.getCurrentPosition();
+		BoardPosition playerPos = player.getCurrentPosition();
+		int numRoomsGenerated = 0;
 		
-		while (numBats < roomNumLogic) {
+		while (numRoomsGenerated < numRoomsToGenerate) {
 			int randX = (int)(Math.random() * width);
 			int randY = (int)(Math.random() * height);
+			BoardPosition randPos = new BoardPosition(randY, randX);
 			
-			if ((playerPos.getXPos() != randX && playerPos.getYPos() != randY) 
-				&& (rickPos.getXPos() != randX && rickPos.getYPos() != randY)
-				&& (!getRoom(randY, randX).hasPit())
-				&& (!getRoom(randY, randX).hasBats())) {
-				setRoom(randY, randX, new Room(randY, randX, Room.RoomType.BatRoom));
-				numBats++;
+			if (!playerPos.equals(randPos) && !rickPos.equals(randPos) && !getRoom(randY, randX).hasPit() && !getRoom(randY, randX).hasBats()) {
+				setRoom(randY, randX, new Room(randY, randX, roomType));
+				numRoomsGenerated++;
 			}
 		}
 	}
