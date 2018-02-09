@@ -1,6 +1,7 @@
 package jri.agile.fixtures;
 
 import jri.agile.game.Game;
+import jri.agile.game.RickVideoPlayerMock;
 
 public class GameContext {
 	
@@ -8,7 +9,7 @@ public class GameContext {
 	
 	public GameContext () {
 		if (game == null) {
-			game = new Game(5, 5);
+			game = new Game(5, 5, new RickVideoPlayerMock());
 		}
 	}
 

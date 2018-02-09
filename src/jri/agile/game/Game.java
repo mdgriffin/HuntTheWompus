@@ -1,10 +1,5 @@
 package jri.agile.game;
 
-import java.awt.Desktop;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-
 public class Game {
 	
 	private Room[][] gameBoard;
@@ -12,10 +7,12 @@ public class Game {
 	private int height;
 	private Player player;
 	private Rick rick;
+	private RickVideoPlayer videoPlayer;
 	
-	public Game (int height, int width) {
+	public Game (int height, int width, RickVideoPlayer videoPlayer) {
 		this.height = height;
 		this.width = width;
+		this.videoPlayer = videoPlayer;
 		
 		this.player = new Player(this, 0, 0);
 		this.rick = new Rick(this, height - 1, width - 1);
@@ -102,15 +99,7 @@ public class Game {
 			player.die();
 			player.actionLog.addLast(GameText.killedByRick);
 			
-			// throws IOException, URISyntaxException
-			/*
-			try {
-				Desktop d = Desktop.getDesktop();
-				d.browse(new URI("https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
-			} catch (Exception exc) {
-				
-			}
-			*/
+			videoPlayer.play();
 			
 		} else if (isPlayerInRoomWithPit()) {
 			player.die();

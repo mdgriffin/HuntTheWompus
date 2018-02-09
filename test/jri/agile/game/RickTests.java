@@ -12,7 +12,7 @@ public class RickTests {
 	
 	@Before
 	public void setup () {
-		this.game = new Game(5,5);
+		this.game = new Game(5,5, new RickVideoPlayerMock());
 	}
 	
 	@Test

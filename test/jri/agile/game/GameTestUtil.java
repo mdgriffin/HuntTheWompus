@@ -3,7 +3,7 @@ package jri.agile.game;
 public class GameTestUtil {
 	
 	public static Game buildEmptyMap (int height, int width) {
-		Game game = new Game(height, width);
+		Game game = new Game(height, width, new RickVideoPlayerMock());
 		
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
@@ -18,7 +18,7 @@ public class GameTestUtil {
 		int width = 5;
 		int height = 5;
 		
-		Game game = new Game(height, width);
+		Game game = new Game(height, width, new RickVideoPlayerMock());
 		
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {

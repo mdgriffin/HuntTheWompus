@@ -12,7 +12,7 @@ public class GameTests {
 	
 	@Before
 	public void setup () {
-		this.game = new Game(5,5);
+		this.game = new Game(5,5, new RickVideoPlayerMock());
 	}
 	
 	@Test
@@ -78,7 +78,7 @@ public class GameTests {
 	public void gameHasTwoPits () {
 		int width = 5;
 		int height = 5;
-		Game game  = new Game(height, width);
+		Game game  = new Game(height, width, new RickVideoPlayerMock());
 		int numPits = 0;
 		
 		for (int row = 0; row < height; row++) {
@@ -96,7 +96,7 @@ public class GameTests {
 	public void gameHasTwoBatRooms () {
 		int width = 5;
 		int height = 5;
-		Game game  = new Game(height, width);
+		Game game  = new Game(height, width, new RickVideoPlayerMock());
 		int numBats = 0;
 		
 		for (int row = 0; row < height; row++) {
@@ -115,7 +115,7 @@ public class GameTests {
 		int expectedBats = 8;
 		int width = 10;
 		int height = 10;
-		Game game  = new Game(height, width);
+		Game game  = new Game(height, width, new RickVideoPlayerMock());
 		int numBats = 0;
 		
 		for (int row = 0; row < height; row++) {
@@ -133,7 +133,7 @@ public class GameTests {
 		int expectedPits = 8;
 		int width = 10;
 		int height = 10;
-		Game game  = new Game(height, width);
+		Game game  = new Game(height, width, new RickVideoPlayerMock());
 		int numPits = 0;
 		
 		for (int row = 0; row < height; row++) {
@@ -174,7 +174,7 @@ public class GameTests {
 		Player player;
 				
 		for (int i = 0; i < 100; i++) {
-			game = new Game(5, 5);
+			game = new Game(5, 5, new RickVideoPlayerMock());
 			player = game.getPlayer();
 			
 			BoardPosition playerPos = game.getPlayer().getCurrentPosition();

@@ -16,7 +16,7 @@ public class GameFixture {
 	}
 	
 	public void setup () {
-		Game game = new Game(5,5);
+		Game game = new Game(5,5, new RickVideoPlayerMock());
 	}
 	
 	
@@ -33,7 +33,7 @@ public class GameFixture {
 	}
 	
 	public int getWumpusPositionX () {
-		Game game = new Game(5, 5);
+		Game game = new Game(5, 5, new RickVideoPlayerMock());
 		Rick wump = game.getRick();
 		wump.freeze();
 		
@@ -73,7 +73,7 @@ public class GameFixture {
 	}
 	
 	public String moveWumbusOneRoomWestEast() {
-		Game game = new Game(5, 5);
+		Game game = new Game(5, 5, new RickVideoPlayerMock());
 		Rick wumbus = game.getRick();
 		wumbus.freeze();
 		
@@ -91,7 +91,7 @@ public class GameFixture {
 	}
 	
 	public String moveWumbusOneRoomSouthNorth() {
-		Game game = new Game(5, 5);
+		Game game = new Game(5, 5, new RickVideoPlayerMock());
 		
 		Rick wumbus = game.getRick();
 		wumbus.freeze();
@@ -126,7 +126,7 @@ public class GameFixture {
 	}
 	
 	public String tryMoveWumbusOffBoardEast () {
-		Game game = new Game(5, 5);
+		Game game = new Game(5, 5, new RickVideoPlayerMock());
 		
 		Rick wumbus = game.getRick();
 		wumbus.freeze();
@@ -141,7 +141,7 @@ public class GameFixture {
 	}
 	
 	public String tryMoveWumbusOffBoardSouth () {
-		Game game = new Game(5, 5);
+		Game game = new Game(5, 5, new RickVideoPlayerMock());
 		
 		Rick wumbus = game.getRick();
 		wumbus.freeze();
@@ -190,7 +190,7 @@ public class GameFixture {
 	
 	public boolean TestMoveRickRandomly()
 	{
-		Game game = new Game(3, 3);
+		Game game = new Game(3, 3, new RickVideoPlayerMock());
 		GameEntity rick = game.getRick();
 		BoardPosition position = rick.getCurrentPosition();
 		int movedNorth = 0;
@@ -223,7 +223,7 @@ public class GameFixture {
 	public boolean doesPlayerDieInPitRoom()
 	{
 		boolean isPlayerDead = false;
-		Game gameWithPit = new Game(2, 2);
+		Game gameWithPit = new Game(2, 2, new RickVideoPlayerMock());
 		Player player = gameWithPit.getPlayer();
 		gameWithPit.setRoom(0, 0, new Room (2, 2, Room.RoomType.Normal));
 		gameWithPit.setRoom(0, 1, new Room (2, 2, Room.RoomType.Normal));
@@ -242,7 +242,7 @@ public class GameFixture {
 	}
 	
 	public static Game buildEmptyMap (int height, int width) {
-		Game game = new Game(height, width);
+		Game game = new Game(height, width, new RickVideoPlayerMock());
 		
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {

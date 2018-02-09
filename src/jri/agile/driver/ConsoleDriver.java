@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import jri.agile.game.Game;
 import jri.agile.game.Player;
+import jri.agile.game.RickVideoPlayerImpl;
 
 public class ConsoleDriver {
 	private static Scanner input;
@@ -27,7 +28,7 @@ public class ConsoleDriver {
 	}
 	
 	private static void playGame () {
-		Game game = new Game(5, 5);
+		Game game = new Game(5, 5, new RickVideoPlayerImpl());
 		Player player = game.getPlayer();
 		String userInput;
 		char command = ' ';

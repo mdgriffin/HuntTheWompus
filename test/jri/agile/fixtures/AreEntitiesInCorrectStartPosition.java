@@ -1,6 +1,7 @@
 package jri.agile.fixtures;
 
 import jri.agile.game.Game;
+import jri.agile.game.RickVideoPlayerMock;
 
 public class AreEntitiesInCorrectStartPosition {
 
@@ -9,7 +10,7 @@ public class AreEntitiesInCorrectStartPosition {
 	private Game game;
 	
 	public void execute() {
-		game = new Game(getNumRows(), getNumColumns());
+		game = new Game(getNumRows(), getNumColumns(), new RickVideoPlayerMock());
 	} 
 	
 	public int getNumColumns() {
