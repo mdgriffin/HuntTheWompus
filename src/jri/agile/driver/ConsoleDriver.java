@@ -41,40 +41,43 @@ public class ConsoleDriver {
 			System.out.print("\n> ");
 			
 			userInput = input.nextLine().toUpperCase();
-			command = userInput.charAt(0);
 			
-			if (command == 'H') {
-				printHelp();
-			} else if (command == 'M') {
-				String[] moveDirection = userInput.split("\\s+");
+			if (userInput.length() > 0) {
+				command = userInput.charAt(0);
 				
-				if (moveDirection.length != 2) {
-					System.out.println("Invalid command please enter again");
-				} else {
-					char direction = moveDirection[1].charAt(0);
-					player.move(direction);
+				if (command == 'H') {
+					printHelp();
+				} else if (command == 'M') {
+					String[] moveDirection = userInput.split("\\s+");
+					
+					if (moveDirection.length != 2) {
+						System.out.println("Invalid command please enter again");
+					} else {
+						char direction = moveDirection[1].charAt(0);
+						player.move(direction);
+					}
+					
+					System.out.println(game.toString());
+					
+				} else if (command == 'S') {
+					String[] shootDirection = userInput.split("\\s+");
+					
+					if (shootDirection.length != 2) {
+						System.out.println("Invalid command please enter again");
+					} else {
+						char direction = shootDirection[1].charAt(0);
+						player.shoot(direction);
+					}
+					
+					System.out.println(game.toString());
+				} else if (command == 'P') {
+					System.out.println(game.printMap());
+				} else if (command == 'R') {
+					player.rest();
+					System.out.println(game.toString());
+				} else if (command != 'Q') {
+					System.out.print("\nInvalid Command, please enter again: ");
 				}
-				
-				System.out.println(game.toString());
-				
-			} else if (command == 'S') {
-				String[] shootDirection = userInput.split("\\s+");
-				
-				if (shootDirection.length != 2) {
-					System.out.println("Invalid command please enter again");
-				} else {
-					char direction = shootDirection[1].charAt(0);
-					player.shoot(direction);
-				}
-				
-				System.out.println(game.toString());
-			} else if (command == 'P') {
-				System.out.println(game.printMap());
-			} else if (command == 'R') {
-				player.rest();
-				System.out.println(game.toString());
-			} else if (command != 'Q') {
-				System.out.print("\nInvalid Command, please enter again: ");
 			}
 			
 		}

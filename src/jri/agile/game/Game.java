@@ -144,6 +144,7 @@ public class Game {
 		return room.hasBats();
 	}
 	
+	
 	public String printMap () {
 		String res = "--------------------------------\n|";
 		int playerX = player.getCurrentPosition().getXPos();
