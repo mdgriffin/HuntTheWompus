@@ -1,92 +1,35 @@
 package jri.agile.driver;
 
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintStream;
 import java.util.Scanner;
-
-import javax.swing.AbstractAction;
-import javax.swing.BoxLayout;
-import javax.swing.JFrame;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
 import jri.agile.game.Game;
 import jri.agile.game.Player;
 
-public class GameDriver extends JFrame {
-
-	private static final long serialVersionUID = 1L;
-	private static String userInput;
-
+public class ConsoleDriver {
+	private static Scanner input;
+	
 	public static void main (String[] args) {
-		GameDriver gameDriver = new GameDriver();
-		Container panel = gameDriver.getContentPane();
-		userInput = "Y";
+		String userInput = "Y";
+		input = new Scanner(System.in);
 		
-		gameDriver.setVisible(true);
-		
-		gameDriver.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-		
-		JTextArea textArea = new JTextArea();
-		
-		textArea.setEditable(false);
-		textArea.setPreferredSize(new Dimension(800, 725));
-		textArea.setBackground(Color.RED);
-		
-		textArea.setFont(new Font("Courier", Font.BOLD, 24));
-		
-		System.setOut(new PrintStream(new OutputStream() {
-	      @Override
-	      public void write(int b) throws IOException {
-	        textArea.append(String.valueOf((char) b));
-	      }
-	    }));
-		
-		panel.add(textArea);
-		
-		JTextField textInput = new JTextField();
-		
-		textInput.setBackground(Color.GREEN);
-		
-		textInput.setFont(new Font("Courier", Font.BOLD, 24));
-		
-		textInput.addActionListener(new AbstractAction()
-			{
-			    @Override
-			    public void actionPerformed(ActionEvent e)
-			    {
-			        userInput = textInput.getText();
-			        textInput.setText("");
-			    }
-			}
-		);
-		
-		panel.add(textInput);
-		
-		gameDriver.setSize(800, 800);
-		
-		gameDriver.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
-		/*
-		while (userInput.length() > 0 && userInput.charAt(0) == 'Y') {
+		while (userInput.length() > 0 && userInput.toUpperCase().charAt(0) == 'Y') {
 			playGame();
 			
 			System.out.print("\nEnter (Y)es to play another game: ");
+			
+			userInput = input.nextLine();
 		}
-		*/
 		
 		System.out.println("\n\nGoodbye, thanks for playing");
+		
+		System.exit(0);
+		
 	}
 	
-	private static void playGame (String input) {
+	private static void playGame () {
 		Game game = new Game(5, 5);
 		Player player = game.getPlayer();
+		String userInput;
 		char command = ' ';
 		
 		printWelcome();
@@ -94,7 +37,9 @@ public class GameDriver extends JFrame {
 
 		while (command != 'Q' && !game.isOver()) {
 			
-			//userInput = input.getText();
+			System.out.print("\n> ");
+			
+			userInput = input.nextLine().toUpperCase();
 			command = userInput.charAt(0);
 			
 			if (command == 'H') {
