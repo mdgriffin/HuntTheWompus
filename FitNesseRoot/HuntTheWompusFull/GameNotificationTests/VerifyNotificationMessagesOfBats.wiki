@@ -1,0 +1,16 @@
+---
+Test
+---
+<test page>
+!define TEST_SYSTEM {slim}
+!path bin
+
+!| import      |
+|jri.agile.fixtures|
+
+!| GameContext|
+
+!3 Verify Notification message when player kills Rick
+!| script|NotificationMessages                |
+|check   |WhenBatsAreInNextRoom|You hear the flapping of wings nearby.|
+|check   |WhenInSameRoomAsBats|Ah, bats have moved caught you and are dragging you to a different room!|

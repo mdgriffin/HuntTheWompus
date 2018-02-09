@@ -1,0 +1,18 @@
+---
+Test
+---
+<test page>
+!define TEST_SYSTEM {slim}
+!path bin
+
+!| import          |
+|jri.agile.fixtures|
+|GameContext       |
+
+!| doesRickAndPlayerMoveToCorrectRooms                                                                           |
+|numRows|numColumns|playerPositionX|playerPositionY|moveCommand|playerExpectedPositionX?|playerExpectedPositionY?|
+|5      |5         |1              |1              |m s        |1                       |2                       |
+|6      |6         |2              |3              |m n        |2                       |2                       |
+|7      |7         |1              |5              |m w        |0                       |5                       |
+|8      |8         |2              |4              |m e        |3                       |4                       |
+|9      |9         |6              |0              |r          |6                       |6                       |

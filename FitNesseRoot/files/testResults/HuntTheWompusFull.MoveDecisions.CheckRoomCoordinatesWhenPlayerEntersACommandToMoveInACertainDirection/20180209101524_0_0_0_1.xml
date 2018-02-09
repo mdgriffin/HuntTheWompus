@@ -1,0 +1,482 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20180127</FitNesseVersion>
+  <rootPath>HuntTheWompusFull.MoveDecisions.CheckRoomCoordinatesWhenPlayerEntersACommandToMoveInACertainDirection</rootPath>
+    <result>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>36</exceptions>
+    </counts>
+    <date>2018-02-09T10:15:24+00:00</date>
+    <runTimeInMillis>173</runTimeInMillis>
+    <content>&lt;br/&gt;&amp;lt;test page&amp;gt;&lt;br/&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;classpath: bin&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;jri.agile.fixtures&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;GameContext&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td colspan="7"&gt;doesRickAndPlayerMoveToCorrectRooms &lt;span class="error"&gt;Could not invoke constructor for doesRickAndPlayerMoveToCorrectRooms[0]&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;numRows&lt;/td&gt;
+		&lt;td&gt;numColumns&lt;/td&gt;
+		&lt;td&gt;playerPositionX&lt;/td&gt;
+		&lt;td&gt;playerPositionY&lt;/td&gt;
+		&lt;td&gt;moveCommand&lt;/td&gt;
+		&lt;td&gt;playerExpectedPositionX?&lt;/td&gt;
+		&lt;td&gt;playerExpectedPositionY?&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;5 &lt;span class="error"&gt;Method setNumRows[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;5 &lt;span class="error"&gt;Method setNumColumns[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;1 &lt;span class="error"&gt;Method setPlayerPositionX[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;1 &lt;span class="error"&gt;Method setPlayerPositionY[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;m s &lt;span class="error"&gt;Method setMoveCommand[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;1 &lt;span class="error"&gt;Method playerExpectedPositionX[0] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;2 &lt;span class="error"&gt;Method playerExpectedPositionY[0] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;6 &lt;span class="error"&gt;Method setNumRows[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;6 &lt;span class="error"&gt;Method setNumColumns[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;2 &lt;span class="error"&gt;Method setPlayerPositionX[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;3 &lt;span class="error"&gt;Method setPlayerPositionY[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;m n &lt;span class="error"&gt;Method setMoveCommand[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;2 &lt;span class="error"&gt;Method playerExpectedPositionX[0] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;2 &lt;span class="error"&gt;Method playerExpectedPositionY[0] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;7 &lt;span class="error"&gt;Method setNumRows[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;7 &lt;span class="error"&gt;Method setNumColumns[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;1 &lt;span class="error"&gt;Method setPlayerPositionX[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;5 &lt;span class="error"&gt;Method setPlayerPositionY[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;m w &lt;span class="error"&gt;Method setMoveCommand[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;0 &lt;span class="error"&gt;Method playerExpectedPositionX[0] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;5 &lt;span class="error"&gt;Method playerExpectedPositionY[0] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;8 &lt;span class="error"&gt;Method setNumRows[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;8 &lt;span class="error"&gt;Method setNumColumns[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;2 &lt;span class="error"&gt;Method setPlayerPositionX[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;4 &lt;span class="error"&gt;Method setPlayerPositionY[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;m e &lt;span class="error"&gt;Method setMoveCommand[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;3 &lt;span class="error"&gt;Method playerExpectedPositionX[0] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;4 &lt;span class="error"&gt;Method playerExpectedPositionY[0] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;9 &lt;span class="error"&gt;Method setNumRows[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;9 &lt;span class="error"&gt;Method setNumColumns[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;6 &lt;span class="error"&gt;Method setPlayerPositionX[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;0 &lt;span class="error"&gt;Method setPlayerPositionY[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;r &lt;span class="error"&gt;Method setMoveCommand[1] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;6 &lt;span class="error"&gt;Method playerExpectedPositionX[0] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;6 &lt;span class="error"&gt;Method playerExpectedPositionY[0] not found in jri.agile.fixtures.GameContext.&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</content>
+    <relativePageName>CheckRoomCoordinatesWhenPlayerEntersACommandToMoveInACertainDirection</relativePageName>
+            <instructions>
+            <instructionResult>
+        <instruction>{id='import_0_0', instruction='import', path='jri.agile.fixtures'}</instruction>
+        <slimResult>pass(jri.agile.fixtures)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_0_0</instructionId>
+                    <col>0</col>
+                              <row>1</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>jri.agile.fixtures</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='import_0_1', instruction='import', path='GameContext'}</instruction>
+        <slimResult>pass(GameContext)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_0_1</instructionId>
+                    <col>0</col>
+                              <row>2</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>GameContext</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_0', instruction='make', instanceName='decisionTable_1', className='doesRickAndPlayerMoveToCorrectRooms', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_0</instructionId>
+                              <type>ConstructionExpectation</type>
+                                        <evaluationMessage>Could not invoke constructor for doesRickAndPlayerMoveToCorrectRooms[0]</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_4', instruction='call', instanceName='decisionTable_1', methodName='setNumRows', args=[5]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_4</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setNumRows[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_5', instruction='call', instanceName='decisionTable_1', methodName='setNumColumns', args=[5]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_5</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setNumColumns[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_6', instruction='call', instanceName='decisionTable_1', methodName='setPlayerPositionX', args=[1]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_6</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setPlayerPositionX[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_7', instruction='call', instanceName='decisionTable_1', methodName='setPlayerPositionY', args=[1]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_7</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setPlayerPositionY[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_8', instruction='call', instanceName='decisionTable_1', methodName='setMoveCommand', args=[m s]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_8</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setMoveCommand[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_10', instruction='call', instanceName='decisionTable_1', methodName='playerExpectedPositionX', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_10</instructionId>
+                              <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>Method playerExpectedPositionX[0] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_11', instruction='call', instanceName='decisionTable_1', methodName='playerExpectedPositionY', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_11</instructionId>
+                              <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>Method playerExpectedPositionY[0] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_13', instruction='call', instanceName='decisionTable_1', methodName='setNumRows', args=[6]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_13</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setNumRows[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_14', instruction='call', instanceName='decisionTable_1', methodName='setNumColumns', args=[6]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_14</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setNumColumns[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_15', instruction='call', instanceName='decisionTable_1', methodName='setPlayerPositionX', args=[2]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_15</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setPlayerPositionX[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_16', instruction='call', instanceName='decisionTable_1', methodName='setPlayerPositionY', args=[3]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_16</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setPlayerPositionY[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_17', instruction='call', instanceName='decisionTable_1', methodName='setMoveCommand', args=[m n]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_17</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setMoveCommand[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_19', instruction='call', instanceName='decisionTable_1', methodName='playerExpectedPositionX', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_19</instructionId>
+                              <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>Method playerExpectedPositionX[0] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_20', instruction='call', instanceName='decisionTable_1', methodName='playerExpectedPositionY', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_20</instructionId>
+                              <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>Method playerExpectedPositionY[0] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_22', instruction='call', instanceName='decisionTable_1', methodName='setNumRows', args=[7]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_22</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setNumRows[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_23', instruction='call', instanceName='decisionTable_1', methodName='setNumColumns', args=[7]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_23</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setNumColumns[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_24', instruction='call', instanceName='decisionTable_1', methodName='setPlayerPositionX', args=[1]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_24</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setPlayerPositionX[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_25', instruction='call', instanceName='decisionTable_1', methodName='setPlayerPositionY', args=[5]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_25</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setPlayerPositionY[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_26', instruction='call', instanceName='decisionTable_1', methodName='setMoveCommand', args=[m w]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_26</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setMoveCommand[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_28', instruction='call', instanceName='decisionTable_1', methodName='playerExpectedPositionX', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_28</instructionId>
+                              <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>Method playerExpectedPositionX[0] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_29', instruction='call', instanceName='decisionTable_1', methodName='playerExpectedPositionY', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_29</instructionId>
+                              <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>Method playerExpectedPositionY[0] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_31', instruction='call', instanceName='decisionTable_1', methodName='setNumRows', args=[8]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_31</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setNumRows[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_32', instruction='call', instanceName='decisionTable_1', methodName='setNumColumns', args=[8]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_32</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setNumColumns[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_33', instruction='call', instanceName='decisionTable_1', methodName='setPlayerPositionX', args=[2]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_33</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setPlayerPositionX[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_34', instruction='call', instanceName='decisionTable_1', methodName='setPlayerPositionY', args=[4]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_34</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setPlayerPositionY[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_35', instruction='call', instanceName='decisionTable_1', methodName='setMoveCommand', args=[m e]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_35</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setMoveCommand[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_37', instruction='call', instanceName='decisionTable_1', methodName='playerExpectedPositionX', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_37</instructionId>
+                              <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>Method playerExpectedPositionX[0] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_38', instruction='call', instanceName='decisionTable_1', methodName='playerExpectedPositionY', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_38</instructionId>
+                              <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>Method playerExpectedPositionY[0] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_40', instruction='call', instanceName='decisionTable_1', methodName='setNumRows', args=[9]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_40</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setNumRows[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_41', instruction='call', instanceName='decisionTable_1', methodName='setNumColumns', args=[9]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_41</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setNumColumns[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_42', instruction='call', instanceName='decisionTable_1', methodName='setPlayerPositionX', args=[6]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_42</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setPlayerPositionX[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_43', instruction='call', instanceName='decisionTable_1', methodName='setPlayerPositionY', args=[0]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_43</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setPlayerPositionY[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_44', instruction='call', instanceName='decisionTable_1', methodName='setMoveCommand', args=[r]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_44</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>Method setMoveCommand[1] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_46', instruction='call', instanceName='decisionTable_1', methodName='playerExpectedPositionX', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_46</instructionId>
+                              <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>Method playerExpectedPositionX[0] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_47', instruction='call', instanceName='decisionTable_1', methodName='playerExpectedPositionY', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_47</instructionId>
+                              <type>ReturnedValueExpectation</type>
+                                        <evaluationMessage>Method playerExpectedPositionY[0] not found in jri.agile.fixtures.GameContext.</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+          </instructions>
+      </result>
+  <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>1</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>173</totalRunTimeInMillis>
+</testResults>
+

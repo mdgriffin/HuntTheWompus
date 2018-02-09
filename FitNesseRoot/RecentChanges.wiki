@@ -1,7 +1,13 @@
+|HuntTheWompusFull.PlayerTests.VerifyThatPlayerIsMovedIntoRandomRoomByBats||10:15:12 Fri, Feb 09, 2018|
+|HuntTheWompusFull.GameNotificationTests.VerifyMessagesOnGameEnd||10:12:28 Fri, Feb 09, 2018|
+|HuntTheWompusFull.GameNotificationTests.VerifyNotificationMessagesOnGameEnd||10:11:06 Fri, Feb 09, 2018|
+|HuntTheWompusFull.GameNotificationTests||10:09:10 Fri, Feb 09, 2018|
+|HuntTheWompusFull.GameNotificationTests.VerifyNotificationMessageOnGameStartup||10:08:07 Fri, Feb 09, 2018|
+|HuntTheWompusFull.MoveDecisions.VerifyNotificationMessageWhenPlayerKillsRick||10:02:58 Fri, Feb 09, 2018|
+|HuntTheWompusFull.GameNotificationTests.VerifyNotificationMessagesWhenRickKillsPlayer||09:54:04 Fri, Feb 09, 2018|
+|HuntTheWompusFull.GameNotificationTests.VerifyNotificationMessagesOfPitRooms||09:52:46 Fri, Feb 09, 2018|
 |HuntTheWompusFull.GameNotificationTests.VerifyNotificationMessagesOfBats||09:46:33 Fri, Feb 09, 2018|
-|HuntTheWompusFull.GameNotificationTests.VerifyNotificationMessagesWhenRickKillsPlayer||09:44:31 Fri, Feb 09, 2018|
 |HuntTheWompusFull.GameNotificationTests.VerifyNotificationMessageWhenPlayerKillsRick||09:37:03 Fri, Feb 09, 2018|
-|HuntTheWompusFull.GameNotificationTests||09:31:47 Fri, Feb 09, 2018|
 |HuntTheWompusFull.MoveDecisions.VerifyNotificationMessagesInMovementScenarios||09:20:28 Fri, Feb 09, 2018|
 |HuntTheWompusFull.MoveDecisions.playerCanMoveInAllDirections||09:10:55 Fri, Feb 09, 2018|
 |HuntTheWompusFull.MoveDecisions||15:59:43 Thu, Feb 08, 2018|

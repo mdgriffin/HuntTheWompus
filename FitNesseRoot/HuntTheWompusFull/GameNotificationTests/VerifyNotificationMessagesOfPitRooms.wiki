@@ -1,0 +1,16 @@
+---
+Test
+---
+<test page>
+!define TEST_SYSTEM {slim}
+!path bin
+
+!| import      |
+|jri.agile.fixtures|
+
+!| GameContext|
+
+!3 Verify Notification message when player kills Rick
+!| script|NotificationMessages                |
+|check   |WhenPlayerIsNextToPitRoom|You feel a cool breeze nearby.|
+|check   |WhenPlayerIsInPitRoom|You fell into the Pit|

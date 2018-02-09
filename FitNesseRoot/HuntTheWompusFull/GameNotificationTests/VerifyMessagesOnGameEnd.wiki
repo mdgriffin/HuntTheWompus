@@ -1,0 +1,16 @@
+---
+Test
+---
+<test page>
+!define TEST_SYSTEM {slim}
+!path bin
+
+!| import          |
+|jri.agile.fixtures|
+
+!| GameContext|
+
+!3 Verify Notification message when play again option appears and when game ends
+!| script|NotificationMessages                                      |
+|check   |PlayeAgainMessageAppears|Enter (Y)es to play another game:|
+|check   |PlayerEndsGame          |Goodbye, thanks for playing      |
