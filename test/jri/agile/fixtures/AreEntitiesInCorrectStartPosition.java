@@ -10,7 +10,7 @@ public class AreEntitiesInCorrectStartPosition {
 	
 	public void execute() {
 		game = new Game(getNumRows(), getNumColumns());
-	}
+	} 
 	
 	public int getNumColumns() {
 		return numColumns;
