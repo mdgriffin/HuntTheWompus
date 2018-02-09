@@ -145,7 +145,7 @@ public class Game {
 	}
 	
 	public String printMap () {
-		String res = "|";
+		String res = "--------------------------------\n|";
 		int playerX = player.getCurrentPosition().getXPos();
 		int playerY = player.getCurrentPosition().getYPos();
 		int rickX = rick.getCurrentPosition().getXPos();
@@ -163,7 +163,7 @@ public class Game {
 				res += String.format("|%-4s|", inner);
 			}
 			
-			res += "|\n|";
+			res += "|\n--------------------------------\n|";
 		}
 		
 		return res.substring(0, res.length() - 1);
